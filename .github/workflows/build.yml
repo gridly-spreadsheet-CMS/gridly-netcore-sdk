@@ -1,0 +1,76 @@
+# This workflow to build and release Gridly NetCore SDK
+
+name: Gridly NetCore SDK
+
+on:
+  push:
+    branches: [ master ]
+    tags: 
+      - '*'
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Release]
+
+    runs-on: ubuntu-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    env:
+      Solution_Name: Com.Gridly.sln
+      Test_Project_Path: src/Com.Gridly.Test/Com.Gridly.Test.csproj
+      
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+        
+    - name: Restore Solution
+      run: dotnet restore
+    
+    # Build the application
+    - name: Publish Solution
+      run: dotnet publish -c $env:Configuration -o bin/com.gridly.netcore-sdk src/Com.Gridly/Com.Gridly.csproj
+      env:
+        Configuration: ${{ matrix.configuration }}
+        
+    - name: Get Version
+      id: get_version
+      uses: greenygh0st/net-proj-release-version@v1
+      with:
+          # Filepath of the *.csproj file, relative to root of repository
+          PROJ_FILE: src/Com.Gridly/Com.Gridly.csproj
+    - name: Compress artifact
+      run: |
+        rm -rf bin/**/*.pdb
+        cd bin && zip com.gridly.netcore-sdk.zip com.gridly.netcore-sdk/**
+        
+    - name: Archive Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        # Artifact name
+        name: com.gridly.netcore-sdk
+        # A file, directory or wildcard pattern that describes what to upload
+        path: bin/*.zip
+        retention-days: 1
+        if-no-files-found: error
+        
+    - name: Github Release
+      uses: softprops/action-gh-release@v1
+      id: create_release
+      with:
+        draft: false
+        prerelease: true
+        tag_name: ${{ steps.get_version.outputs.RELEASE_VERSION }}
+        files: bin/*.zip
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
