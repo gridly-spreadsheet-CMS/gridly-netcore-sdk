@@ -39,7 +39,7 @@ jobs:
     
     # Build the application
     - name: Publish Solution
-      run: dotnet build -c Release -o bin/com.gridly.netcore-sdk src/Com.Gridly/Com.Gridly.csproj
+      run: dotnet publish -f net5.0 -o bin/com.gridly.netcore-sdk src/Com.Gridly/Com.Gridly.csproj
       env:
         Configuration: ${{ matrix.configuration }}
         
