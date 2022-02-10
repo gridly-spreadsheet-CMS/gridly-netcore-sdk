@@ -106,7 +106,7 @@ namespace Com.Gridly.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "Gridly NetCore SDK 1.1.0";
+            UserAgent = "Gridly NetCore SDK 1.2.0";
             BasePath = "https://api.gridly.com";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
