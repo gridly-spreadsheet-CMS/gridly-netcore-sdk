@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get
 [**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView
 [**List**](ViewApi.md#list) | **GET** /v1/views | list
+[**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge
 
 
 <a name="export"></a>
 # **Export**
-> Object Export (string viewId, List<string> columnIds = null, string query = null, string sort = null, string type = null)
+> System.IO.Stream Export (string viewId, List<string> columnIds = null, string fileHeader = null, string query = null, string sort = null, string type = null)
 
 export
 
@@ -40,6 +41,7 @@ namespace Example
             var apiInstance = new ViewApi(config);
             var viewId = viewId_example;  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
+            var fileHeader = fileHeader_example;  // string | fileHeader (optional)  (default to columnName)
             var query = query_example;  // string | query (optional)  (default to "{}")
             var sort = sort_example;  // string | sort (optional)  (default to "{}")
             var type = type_example;  // string | type (optional)  (default to csv)
@@ -47,7 +49,7 @@ namespace Example
             try
             {
                 // export
-                Object result = apiInstance.Export(viewId, columnIds, query, sort, type);
+                System.IO.Stream result = apiInstance.Export(viewId, columnIds, fileHeader, query, sort, type);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,13 +69,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
+ **fileHeader** | **string**| fileHeader | [optional] [default to columnName]
  **query** | **string**| query | [optional] [default to &quot;{}&quot;]
  **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
  **type** | **string**| type | [optional] [default to csv]
 
 ### Return type
 
-**Object**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -82,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*, application/json
+ - **Accept**: application/octet-stream
 
 
 ### HTTP response details
@@ -125,7 +128,7 @@ namespace Example
             var apiInstance = new ViewApi(config);
             var viewId = viewId_example;  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
-            var include = include_example;  // List<string> | include (optional) 
+            var include = new List<string>(); // List<string> | include (optional) 
             var page = page_example;  // string | page (optional)  (default to "{}")
             var query = query_example;  // string | query (optional)  (default to "{}")
             var sort = sort_example;  // string | sort (optional)  (default to "{}")
@@ -153,7 +156,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
- **include** | **List&lt;string&gt;**| include | [optional] 
+ **include** | [**List&lt;string&gt;**](string.md)| include | [optional] 
  **page** | **string**| page | [optional] [default to &quot;{}&quot;]
  **query** | **string**| query | [optional] [default to &quot;{}&quot;]
  **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
@@ -169,7 +172,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -333,13 +336,94 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="merge"></a>
+# **Merge**
+> void Merge (string destinationViewId, string viewId, List<string> mergeRecordOptions = null)
+
+merge
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class MergeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ViewApi(config);
+            var destinationViewId = destinationViewId_example;  // string | destinationViewId
+            var viewId = viewId_example;  // string | viewId
+            var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
+
+            try
+            {
+                // merge
+                apiInstance.Merge(destinationViewId, viewId, mergeRecordOptions);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ViewApi.Merge: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destinationViewId** | **string**| destinationViewId | 
+ **viewId** | **string**| viewId | 
+ **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Created |  -  |
+| **202** | Accepted |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Description** | **string** |  | [optional] 
 **LanguageCode** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **NumberFormat** | [**NumberFormat**](NumberFormat.md) |  | [optional] 

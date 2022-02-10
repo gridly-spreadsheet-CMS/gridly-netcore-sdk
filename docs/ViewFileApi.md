@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="download"></a>
 # **Download**
-> Object Download (string fileId, string viewId)
+> System.IO.Stream Download (string fileId, string viewId)
 
 download
 
@@ -43,7 +43,7 @@ namespace Example
             try
             {
                 // download
-                Object result = apiInstance.Download(fileId, viewId);
+                System.IO.Stream result = apiInstance.Download(fileId, viewId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*, application/json
+ - **Accept**: application/octet-stream
 
 
 ### HTTP response details
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: */*, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 <a name="uploadzip"></a>
 # **UploadZip**
-> List&lt;Record&gt; UploadZip (string viewId, Object columnId, Object file = null)
+> List&lt;Record&gt; UploadZip (string viewId, Object columnId, System.IO.Stream file, Object fileMappings)
 
 uploadZip
 
@@ -202,12 +202,13 @@ namespace Example
             var apiInstance = new ViewFileApi(config);
             var viewId = viewId_example;  // string | viewId
             var columnId = new Object(); // Object | columnId
-            var file = new Object(); // Object |  (optional) 
+            var file = BINARY_DATA_HERE;  // System.IO.Stream | file
+            var fileMappings = new Object(); // Object | fileMappings
 
             try
             {
                 // uploadZip
-                List<Record> result = apiInstance.UploadZip(viewId, columnId, file);
+                List<Record> result = apiInstance.UploadZip(viewId, columnId, file, fileMappings);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -227,7 +228,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **columnId** | [**Object**](Object.md)| columnId | 
- **file** | [**Object**](Object.md)|  | [optional] 
+ **file** | **System.IO.Stream****System.IO.Stream**| file | 
+ **fileMappings** | [**Object**](Object.md)| fileMappings | 
 
 ### Return type
 
@@ -240,7 +242,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: */*, application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details

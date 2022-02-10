@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DependsOn** | **string** |  | [optional] 
+**Description** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **IsSource** | **bool** |  | [optional] 
 **IsTarget** | **bool** |  | [optional] 

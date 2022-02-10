@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>Com.Gridly.Test</AssemblyName>
     <RootNamespace>Com.Gridly.Test</RootNamespace>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <TargetFramework>net5.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
