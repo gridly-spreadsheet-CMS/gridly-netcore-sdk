@@ -24,7 +24,6 @@ docs/GridApi.md
 docs/GridMetadataApi.md
 docs/Metadata.md
 docs/NumberFormat.md
-docs/OptionalOfstring.md
 docs/Privilege.md
 docs/Project.md
 docs/ProjectApi.md
@@ -105,7 +104,6 @@ src/Com.Gridly/Model/File.cs
 src/Com.Gridly/Model/Grid.cs
 src/Com.Gridly/Model/Metadata.cs
 src/Com.Gridly/Model/NumberFormat.cs
-src/Com.Gridly/Model/OptionalOfstring.cs
 src/Com.Gridly/Model/Privilege.cs
 src/Com.Gridly/Model/Project.cs
 src/Com.Gridly/Model/ProjectDetail.cs

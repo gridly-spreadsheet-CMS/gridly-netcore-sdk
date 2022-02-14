@@ -196,7 +196,6 @@ Class | Method | HTTP request | Description
  - [Model.Grid](docs/Grid.md)
  - [Model.Metadata](docs/Metadata.md)
  - [Model.NumberFormat](docs/NumberFormat.md)
- - [Model.OptionalOfstring](docs/OptionalOfstring.md)
  - [Model.Privilege](docs/Privilege.md)
  - [Model.Project](docs/Project.md)
  - [Model.ProjectDetail](docs/ProjectDetail.md)

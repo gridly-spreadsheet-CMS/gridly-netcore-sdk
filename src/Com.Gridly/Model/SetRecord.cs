@@ -37,7 +37,7 @@ namespace Com.Gridly.Model
         /// <param name="cells">cells.</param>
         /// <param name="id">id.</param>
         /// <param name="path">path.</param>
-        public SetRecord(List<SetCell> cells = default(List<SetCell>), string id = default(string), OptionalOfstring path = default(OptionalOfstring))
+        public SetRecord(List<SetCell> cells = default(List<SetCell>), string id = default(string), string path = default(string))
         {
             this.Cells = cells;
             this.Id = id;
@@ -60,7 +60,7 @@ namespace Com.Gridly.Model
         /// Gets or Sets Path
         /// </summary>
         [DataMember(Name = "path", EmitDefaultValue = false)]
-        public OptionalOfstring Path { get; set; }
+        public string Path { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
