@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> List&lt;Record&gt; Create (string viewId, List<SetRecord> createRecordDTOs)
+> List&lt;Record&gt; Create (string viewId, List<SetRecord> createRecords)
 
 create
 
@@ -40,12 +40,12 @@ namespace Example
 
             var apiInstance = new RecordApi(config);
             var viewId = viewId_example;  // string | viewId
-            var createRecordDTOs = new List<SetRecord>(); // List<SetRecord> | createRecordDTOs
+            var createRecords = new List<SetRecord>(); // List<SetRecord> | createRecords
 
             try
             {
                 // create
-                List<Record> result = apiInstance.Create(viewId, createRecordDTOs);
+                List<Record> result = apiInstance.Create(viewId, createRecords);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +64,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **createRecordDTOs** | [**List&lt;SetRecord&gt;**](SetRecord.md)| createRecordDTOs | 
+ **createRecords** | [**List&lt;SetRecord&gt;**](SetRecord.md)| createRecords | 
 
 ### Return type
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 <a name="delete"></a>
 # **Delete**
-> void Delete (string viewId, DeleteRecord deleteRecordDTO)
+> void Delete (string viewId, DeleteRecord deleteRecord)
 
 delete
 
@@ -120,12 +120,12 @@ namespace Example
 
             var apiInstance = new RecordApi(config);
             var viewId = viewId_example;  // string | viewId
-            var deleteRecordDTO = new DeleteRecord(); // DeleteRecord | deleteRecordDTO
+            var deleteRecord = new DeleteRecord(); // DeleteRecord | deleteRecord
 
             try
             {
                 // delete
-                apiInstance.Delete(viewId, deleteRecordDTO);
+                apiInstance.Delete(viewId, deleteRecord);
             }
             catch (ApiException  e)
             {
@@ -143,7 +143,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **deleteRecordDTO** | [**DeleteRecord**](DeleteRecord.md)| deleteRecordDTO | 
+ **deleteRecord** | [**DeleteRecord**](DeleteRecord.md)| deleteRecord | 
 
 ### Return type
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 <a name="update"></a>
 # **Update**
-> List&lt;Record&gt; Update (string viewId, List<SetRecord> updateRecordDTOs)
+> List&lt;Record&gt; Update (string viewId, List<SetRecord> updateRecords)
 
 update
 
@@ -282,12 +282,12 @@ namespace Example
 
             var apiInstance = new RecordApi(config);
             var viewId = viewId_example;  // string | viewId
-            var updateRecordDTOs = new List<SetRecord>(); // List<SetRecord> | updateRecordDTOs
+            var updateRecords = new List<SetRecord>(); // List<SetRecord> | updateRecords
 
             try
             {
                 // update
-                List<Record> result = apiInstance.Update(viewId, updateRecordDTOs);
+                List<Record> result = apiInstance.Update(viewId, updateRecords);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -306,7 +306,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **updateRecordDTOs** | [**List&lt;SetRecord&gt;**](SetRecord.md)| updateRecordDTOs | 
+ **updateRecords** | [**List&lt;SetRecord&gt;**](SetRecord.md)| updateRecords | 
 
 ### Return type
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 <a name="updaterecord"></a>
 # **UpdateRecord**
-> Record UpdateRecord (string id, string viewId, SetRecord updateRecordDTO, string path = null)
+> Record UpdateRecord (string id, string viewId, SetRecord updateRecord, string path = null)
 
 updateRecord
 
@@ -362,13 +362,13 @@ namespace Example
             var apiInstance = new RecordApi(config);
             var id = id_example;  // string | id
             var viewId = viewId_example;  // string | viewId
-            var updateRecordDTO = new SetRecord(); // SetRecord | updateRecordDTO
+            var updateRecord = new SetRecord(); // SetRecord | updateRecord
             var path = path_example;  // string | path (optional) 
 
             try
             {
                 // updateRecord
-                Record result = apiInstance.UpdateRecord(id, viewId, updateRecordDTO, path);
+                Record result = apiInstance.UpdateRecord(id, viewId, updateRecord, path);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| id | 
  **viewId** | **string**| viewId | 
- **updateRecordDTO** | [**SetRecord**](SetRecord.md)| updateRecordDTO | 
+ **updateRecord** | [**SetRecord**](SetRecord.md)| updateRecord | 
  **path** | **string**| path | [optional] 
 
 ### Return type

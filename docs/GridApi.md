@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> Grid Create (string dbId, CreateGrid createCompositeGrid)
+> Grid Create (string dbId, CreateGrid createGrid)
 
 create
 
@@ -41,12 +41,12 @@ namespace Example
 
             var apiInstance = new GridApi(config);
             var dbId = dbId_example;  // string | dbId
-            var createCompositeGrid = new CreateGrid(); // CreateGrid | createCompositeGrid
+            var createGrid = new CreateGrid(); // CreateGrid | createGrid
 
             try
             {
                 // create
-                Grid result = apiInstance.Create(dbId, createCompositeGrid);
+                Grid result = apiInstance.Create(dbId, createGrid);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +65,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
- **createCompositeGrid** | [**CreateGrid**](CreateGrid.md)| createCompositeGrid | 
+ **createGrid** | [**CreateGrid**](CreateGrid.md)| createGrid | 
 
 ### Return type
 
@@ -395,7 +395,7 @@ This endpoint does not need any parameter.
 
 <a name="update"></a>
 # **Update**
-> Grid Update (string gridId, UpdateGrid updateCompositeGrid)
+> Grid Update (string gridId, UpdateGrid updateGrid)
 
 update
 
@@ -422,12 +422,12 @@ namespace Example
 
             var apiInstance = new GridApi(config);
             var gridId = gridId_example;  // string | gridId
-            var updateCompositeGrid = new UpdateGrid(); // UpdateGrid | updateCompositeGrid
+            var updateGrid = new UpdateGrid(); // UpdateGrid | updateGrid
 
             try
             {
                 // update
-                Grid result = apiInstance.Update(gridId, updateCompositeGrid);
+                Grid result = apiInstance.Update(gridId, updateGrid);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -446,7 +446,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gridId** | **string**| gridId | 
- **updateCompositeGrid** | [**UpdateGrid**](UpdateGrid.md)| updateCompositeGrid | 
+ **updateGrid** | [**UpdateGrid**](UpdateGrid.md)| updateGrid | 
 
 ### Return type
 
