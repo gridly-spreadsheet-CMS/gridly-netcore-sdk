@@ -4,13 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
-**Description** | **string** |  | [optional] 
+**Columns** | [**List&lt;ViewColumn&gt;**](ViewColumn.md) |  | [optional] 
 **GridId** | **string** |  | [optional] 
-**GroupTagDefinition** | **List&lt;string&gt;** |  | [optional] 
+**GridStatus** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Status** | **string** |  | [optional] 
+**Records** | [**List&lt;Record&gt;**](Record.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

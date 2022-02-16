@@ -32,47 +32,111 @@ namespace Com.Gridly.Model
     public partial class Grid : IEquatable<Grid>, IValidatableObject
     {
         /// <summary>
+        /// Defines Status
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            /// <summary>
+            /// Enum Deleted for value: deleted
+            /// </summary>
+            [EnumMember(Value = "deleted")]
+            Deleted = 1,
+
+            /// <summary>
+            /// Enum Active for value: active
+            /// </summary>
+            [EnumMember(Value = "active")]
+            Active = 2,
+
+            /// <summary>
+            /// Enum Inactive for value: inactive
+            /// </summary>
+            [EnumMember(Value = "inactive")]
+            Inactive = 3,
+
+            /// <summary>
+            /// Enum Restoring for value: restoring
+            /// </summary>
+            [EnumMember(Value = "restoring")]
+            Restoring = 4,
+
+            /// <summary>
+            /// Enum BackingUp for value: backingUp
+            /// </summary>
+            [EnumMember(Value = "backingUp")]
+            BackingUp = 5,
+
+            /// <summary>
+            /// Enum Uploading for value: uploading
+            /// </summary>
+            [EnumMember(Value = "uploading")]
+            Uploading = 6,
+
+            /// <summary>
+            /// Enum Importing for value: importing
+            /// </summary>
+            [EnumMember(Value = "importing")]
+            Importing = 7,
+
+            /// <summary>
+            /// Enum Branching for value: branching
+            /// </summary>
+            [EnumMember(Value = "branching")]
+            Branching = 8,
+
+            /// <summary>
+            /// Enum Merging for value: merging
+            /// </summary>
+            [EnumMember(Value = "merging")]
+            Merging = 9,
+
+            /// <summary>
+            /// Enum Duplicating for value: duplicating
+            /// </summary>
+            [EnumMember(Value = "duplicating")]
+            Duplicating = 10,
+
+            /// <summary>
+            /// Enum ClearingRecords for value: clearingRecords
+            /// </summary>
+            [EnumMember(Value = "clearingRecords")]
+            ClearingRecords = 11
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public StatusEnum? Status { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Grid" /> class.
         /// </summary>
-        /// <param name="branchId">branchId.</param>
-        /// <param name="branches">branches.</param>
-        /// <param name="customProperties">customProperties.</param>
+        /// <param name="columns">columns.</param>
         /// <param name="defaultAccessViewId">defaultAccessViewId.</param>
-        /// <param name="groupTagDefinition">groupTagDefinition.</param>
+        /// <param name="description">description.</param>
         /// <param name="id">id.</param>
+        /// <param name="metadata">metadata.</param>
         /// <param name="name">name.</param>
-        /// <param name="parentGridId">parentGridId.</param>
         /// <param name="status">status.</param>
-        public Grid(string branchId = default(string), List<Grid> branches = default(List<Grid>), Dictionary<string, Object> customProperties = default(Dictionary<string, Object>), string defaultAccessViewId = default(string), List<string> groupTagDefinition = default(List<string>), string id = default(string), string name = default(string), string parentGridId = default(string), string status = default(string))
+        public Grid(List<ViewColumn> columns = default(List<ViewColumn>), string defaultAccessViewId = default(string), string description = default(string), string id = default(string), Dictionary<string, string> metadata = default(Dictionary<string, string>), string name = default(string), StatusEnum? status = default(StatusEnum?))
         {
-            this.BranchId = branchId;
-            this.Branches = branches;
-            this.CustomProperties = customProperties;
+            this.Columns = columns;
             this.DefaultAccessViewId = defaultAccessViewId;
-            this.GroupTagDefinition = groupTagDefinition;
+            this.Description = description;
             this.Id = id;
+            this.Metadata = metadata;
             this.Name = name;
-            this.ParentGridId = parentGridId;
             this.Status = status;
         }
 
         /// <summary>
-        /// Gets or Sets BranchId
+        /// Gets or Sets Columns
         /// </summary>
-        [DataMember(Name = "branchId", EmitDefaultValue = false)]
-        public string BranchId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Branches
-        /// </summary>
-        [DataMember(Name = "branches", EmitDefaultValue = false)]
-        public List<Grid> Branches { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CustomProperties
-        /// </summary>
-        [DataMember(Name = "customProperties", EmitDefaultValue = false)]
-        public Dictionary<string, Object> CustomProperties { get; set; }
+        [DataMember(Name = "columns", EmitDefaultValue = false)]
+        public List<ViewColumn> Columns { get; set; }
 
         /// <summary>
         /// Gets or Sets DefaultAccessViewId
@@ -81,10 +145,10 @@ namespace Com.Gridly.Model
         public string DefaultAccessViewId { get; set; }
 
         /// <summary>
-        /// Gets or Sets GroupTagDefinition
+        /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "groupTagDefinition", EmitDefaultValue = false)]
-        public List<string> GroupTagDefinition { get; set; }
+        [DataMember(Name = "description", EmitDefaultValue = false)]
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -93,22 +157,16 @@ namespace Com.Gridly.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Dictionary<string, string> Metadata { get; set; }
+
+        /// <summary>
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ParentGridId
-        /// </summary>
-        [DataMember(Name = "parentGridId", EmitDefaultValue = false)]
-        public string ParentGridId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Status
-        /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public string Status { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -118,14 +176,12 @@ namespace Com.Gridly.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Grid {\n");
-            sb.Append("  BranchId: ").Append(BranchId).Append("\n");
-            sb.Append("  Branches: ").Append(Branches).Append("\n");
-            sb.Append("  CustomProperties: ").Append(CustomProperties).Append("\n");
+            sb.Append("  Columns: ").Append(Columns).Append("\n");
             sb.Append("  DefaultAccessViewId: ").Append(DefaultAccessViewId).Append("\n");
-            sb.Append("  GroupTagDefinition: ").Append(GroupTagDefinition).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  ParentGridId: ").Append(ParentGridId).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -163,21 +219,10 @@ namespace Com.Gridly.Model
             }
             return 
                 (
-                    this.BranchId == input.BranchId ||
-                    (this.BranchId != null &&
-                    this.BranchId.Equals(input.BranchId))
-                ) && 
-                (
-                    this.Branches == input.Branches ||
-                    this.Branches != null &&
-                    input.Branches != null &&
-                    this.Branches.SequenceEqual(input.Branches)
-                ) && 
-                (
-                    this.CustomProperties == input.CustomProperties ||
-                    this.CustomProperties != null &&
-                    input.CustomProperties != null &&
-                    this.CustomProperties.SequenceEqual(input.CustomProperties)
+                    this.Columns == input.Columns ||
+                    this.Columns != null &&
+                    input.Columns != null &&
+                    this.Columns.SequenceEqual(input.Columns)
                 ) && 
                 (
                     this.DefaultAccessViewId == input.DefaultAccessViewId ||
@@ -185,10 +230,9 @@ namespace Com.Gridly.Model
                     this.DefaultAccessViewId.Equals(input.DefaultAccessViewId))
                 ) && 
                 (
-                    this.GroupTagDefinition == input.GroupTagDefinition ||
-                    this.GroupTagDefinition != null &&
-                    input.GroupTagDefinition != null &&
-                    this.GroupTagDefinition.SequenceEqual(input.GroupTagDefinition)
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -196,19 +240,19 @@ namespace Com.Gridly.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.Metadata == input.Metadata ||
+                    this.Metadata != null &&
+                    input.Metadata != null &&
+                    this.Metadata.SequenceEqual(input.Metadata)
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.ParentGridId == input.ParentGridId ||
-                    (this.ParentGridId != null &&
-                    this.ParentGridId.Equals(input.ParentGridId))
-                ) && 
-                (
                     this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.Status.Equals(input.Status)
                 );
         }
 
@@ -221,42 +265,31 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.BranchId != null)
+                if (this.Columns != null)
                 {
-                    hashCode = (hashCode * 59) + this.BranchId.GetHashCode();
-                }
-                if (this.Branches != null)
-                {
-                    hashCode = (hashCode * 59) + this.Branches.GetHashCode();
-                }
-                if (this.CustomProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.CustomProperties.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Columns.GetHashCode();
                 }
                 if (this.DefaultAccessViewId != null)
                 {
                     hashCode = (hashCode * 59) + this.DefaultAccessViewId.GetHashCode();
                 }
-                if (this.GroupTagDefinition != null)
+                if (this.Description != null)
                 {
-                    hashCode = (hashCode * 59) + this.GroupTagDefinition.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
                 }
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
                 if (this.Name != null)
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.ParentGridId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ParentGridId.GetHashCode();
-                }
-                if (this.Status != null)
-                {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 return hashCode;
             }
         }

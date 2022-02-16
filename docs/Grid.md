@@ -4,14 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BranchId** | **string** |  | [optional] 
-**Branches** | [**List&lt;Grid&gt;**](Grid.md) |  | [optional] 
-**CustomProperties** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
+**Columns** | [**List&lt;ViewColumn&gt;**](ViewColumn.md) |  | [optional] 
 **DefaultAccessViewId** | **string** |  | [optional] 
-**GroupTagDefinition** | **List&lt;string&gt;** |  | [optional] 
+**Description** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 
+**Metadata** | **Dictionary&lt;string, string&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**ParentGridId** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -32,49 +32,115 @@ namespace Com.Gridly.Model
     public partial class View : IEquatable<View>, IValidatableObject
     {
         /// <summary>
+        /// Defines GridStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum GridStatusEnum
+        {
+            /// <summary>
+            /// Enum Deleted for value: deleted
+            /// </summary>
+            [EnumMember(Value = "deleted")]
+            Deleted = 1,
+
+            /// <summary>
+            /// Enum Active for value: active
+            /// </summary>
+            [EnumMember(Value = "active")]
+            Active = 2,
+
+            /// <summary>
+            /// Enum Inactive for value: inactive
+            /// </summary>
+            [EnumMember(Value = "inactive")]
+            Inactive = 3,
+
+            /// <summary>
+            /// Enum Restoring for value: restoring
+            /// </summary>
+            [EnumMember(Value = "restoring")]
+            Restoring = 4,
+
+            /// <summary>
+            /// Enum BackingUp for value: backingUp
+            /// </summary>
+            [EnumMember(Value = "backingUp")]
+            BackingUp = 5,
+
+            /// <summary>
+            /// Enum Uploading for value: uploading
+            /// </summary>
+            [EnumMember(Value = "uploading")]
+            Uploading = 6,
+
+            /// <summary>
+            /// Enum Importing for value: importing
+            /// </summary>
+            [EnumMember(Value = "importing")]
+            Importing = 7,
+
+            /// <summary>
+            /// Enum Branching for value: branching
+            /// </summary>
+            [EnumMember(Value = "branching")]
+            Branching = 8,
+
+            /// <summary>
+            /// Enum Merging for value: merging
+            /// </summary>
+            [EnumMember(Value = "merging")]
+            Merging = 9,
+
+            /// <summary>
+            /// Enum Duplicating for value: duplicating
+            /// </summary>
+            [EnumMember(Value = "duplicating")]
+            Duplicating = 10,
+
+            /// <summary>
+            /// Enum ClearingRecords for value: clearingRecords
+            /// </summary>
+            [EnumMember(Value = "clearingRecords")]
+            ClearingRecords = 11
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets GridStatus
+        /// </summary>
+        [DataMember(Name = "gridStatus", EmitDefaultValue = false)]
+        public GridStatusEnum? GridStatus { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="View" /> class.
         /// </summary>
-        /// <param name="customProperties">customProperties.</param>
-        /// <param name="description">description.</param>
+        /// <param name="columns">columns.</param>
         /// <param name="gridId">gridId.</param>
-        /// <param name="groupTagDefinition">groupTagDefinition.</param>
+        /// <param name="gridStatus">gridStatus.</param>
         /// <param name="id">id.</param>
         /// <param name="name">name.</param>
-        /// <param name="status">status.</param>
-        public View(Dictionary<string, Object> customProperties = default(Dictionary<string, Object>), string description = default(string), string gridId = default(string), List<string> groupTagDefinition = default(List<string>), string id = default(string), string name = default(string), string status = default(string))
+        /// <param name="records">records.</param>
+        public View(List<ViewColumn> columns = default(List<ViewColumn>), string gridId = default(string), GridStatusEnum? gridStatus = default(GridStatusEnum?), string id = default(string), string name = default(string), List<Record> records = default(List<Record>))
         {
-            this.CustomProperties = customProperties;
-            this.Description = description;
+            this.Columns = columns;
             this.GridId = gridId;
-            this.GroupTagDefinition = groupTagDefinition;
+            this.GridStatus = gridStatus;
             this.Id = id;
             this.Name = name;
-            this.Status = status;
+            this.Records = records;
         }
 
         /// <summary>
-        /// Gets or Sets CustomProperties
+        /// Gets or Sets Columns
         /// </summary>
-        [DataMember(Name = "customProperties", EmitDefaultValue = false)]
-        public Dictionary<string, Object> CustomProperties { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Description
-        /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
-        public string Description { get; set; }
+        [DataMember(Name = "columns", EmitDefaultValue = false)]
+        public List<ViewColumn> Columns { get; set; }
 
         /// <summary>
         /// Gets or Sets GridId
         /// </summary>
         [DataMember(Name = "gridId", EmitDefaultValue = false)]
         public string GridId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets GroupTagDefinition
-        /// </summary>
-        [DataMember(Name = "groupTagDefinition", EmitDefaultValue = false)]
-        public List<string> GroupTagDefinition { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -89,10 +155,10 @@ namespace Com.Gridly.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Gets or Sets Records
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public string Status { get; set; }
+        [DataMember(Name = "records", EmitDefaultValue = false)]
+        public List<Record> Records { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -102,13 +168,12 @@ namespace Com.Gridly.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class View {\n");
-            sb.Append("  CustomProperties: ").Append(CustomProperties).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Columns: ").Append(Columns).Append("\n");
             sb.Append("  GridId: ").Append(GridId).Append("\n");
-            sb.Append("  GroupTagDefinition: ").Append(GroupTagDefinition).Append("\n");
+            sb.Append("  GridStatus: ").Append(GridStatus).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Records: ").Append(Records).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -145,15 +210,10 @@ namespace Com.Gridly.Model
             }
             return 
                 (
-                    this.CustomProperties == input.CustomProperties ||
-                    this.CustomProperties != null &&
-                    input.CustomProperties != null &&
-                    this.CustomProperties.SequenceEqual(input.CustomProperties)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.Columns == input.Columns ||
+                    this.Columns != null &&
+                    input.Columns != null &&
+                    this.Columns.SequenceEqual(input.Columns)
                 ) && 
                 (
                     this.GridId == input.GridId ||
@@ -161,10 +221,8 @@ namespace Com.Gridly.Model
                     this.GridId.Equals(input.GridId))
                 ) && 
                 (
-                    this.GroupTagDefinition == input.GroupTagDefinition ||
-                    this.GroupTagDefinition != null &&
-                    input.GroupTagDefinition != null &&
-                    this.GroupTagDefinition.SequenceEqual(input.GroupTagDefinition)
+                    this.GridStatus == input.GridStatus ||
+                    this.GridStatus.Equals(input.GridStatus)
                 ) && 
                 (
                     this.Id == input.Id ||
@@ -177,9 +235,10 @@ namespace Com.Gridly.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
+                    this.Records == input.Records ||
+                    this.Records != null &&
+                    input.Records != null &&
+                    this.Records.SequenceEqual(input.Records)
                 );
         }
 
@@ -192,22 +251,15 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.CustomProperties != null)
+                if (this.Columns != null)
                 {
-                    hashCode = (hashCode * 59) + this.CustomProperties.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Columns.GetHashCode();
                 }
                 if (this.GridId != null)
                 {
                     hashCode = (hashCode * 59) + this.GridId.GetHashCode();
                 }
-                if (this.GroupTagDefinition != null)
-                {
-                    hashCode = (hashCode * 59) + this.GroupTagDefinition.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.GridStatus.GetHashCode();
                 if (this.Id != null)
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
@@ -216,9 +268,9 @@ namespace Com.Gridly.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.Status != null)
+                if (this.Records != null)
                 {
-                    hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Records.GetHashCode();
                 }
                 return hashCode;
             }
