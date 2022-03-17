@@ -26,42 +26,33 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// UpdateDatabase
+    /// AddViewColumn
     /// </summary>
-    [DataContract(Name = "UpdateDatabase")]
-    public partial class UpdateDatabase : IEquatable<UpdateDatabase>, IValidatableObject
+    [DataContract(Name = "AddViewColumn")]
+    public partial class AddViewColumn : IEquatable<AddViewColumn>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateDatabase" /> class.
+        /// Initializes a new instance of the <see cref="AddViewColumn" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected UpdateDatabase() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateDatabase" /> class.
-        /// </summary>
-        /// <param name="description">description.</param>
-        /// <param name="name">name (required).</param>
-        public UpdateDatabase(string description = default(string), string name = default(string))
+        /// <param name="editable">editable.</param>
+        /// <param name="id">id.</param>
+        public AddViewColumn(bool editable = default(bool), string id = default(string))
         {
-            // to ensure "name" is required (not null)
-            if (name == null) {
-                throw new ArgumentNullException("name is a required property for UpdateDatabase and cannot be null");
-            }
-            this.Name = name;
-            this.Description = description;
+            this.Editable = editable;
+            this.Id = id;
         }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Gets or Sets Editable
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
-        public string Description { get; set; }
+        [DataMember(Name = "editable", EmitDefaultValue = true)]
+        public bool Editable { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
-        public string Name { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,9 +61,9 @@ namespace Com.Gridly.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateDatabase {\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class AddViewColumn {\n");
+            sb.Append("  Editable: ").Append(Editable).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +84,15 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateDatabase);
+            return this.Equals(input as AddViewColumn);
         }
 
         /// <summary>
-        /// Returns true if UpdateDatabase instances are equal
+        /// Returns true if AddViewColumn instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateDatabase to be compared</param>
+        /// <param name="input">Instance of AddViewColumn to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateDatabase input)
+        public bool Equals(AddViewColumn input)
         {
             if (input == null)
             {
@@ -109,14 +100,13 @@ namespace Com.Gridly.Model
             }
             return 
                 (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.Editable == input.Editable ||
+                    this.Editable.Equals(input.Editable)
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -129,13 +119,10 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Description != null)
+                hashCode = (hashCode * 59) + this.Editable.GetHashCode();
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
-                }
-                if (this.Name != null)
-                {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 return hashCode;
             }

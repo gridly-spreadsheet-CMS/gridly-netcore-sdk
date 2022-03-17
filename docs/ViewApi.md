@@ -4,12 +4,91 @@ All URIs are relative to *https://api.gridly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**Create**](ViewApi.md#create) | **POST** /v1/views | create
 [**Export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export
 [**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get
 [**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView
 [**List**](ViewApi.md#list) | **GET** /v1/views | list
 [**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge
 
+
+<a name="create"></a>
+# **Create**
+> View Create (CreateView createView)
+
+create
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class CreateExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ViewApi(config);
+            var createView = new CreateView(); // CreateView | createView
+
+            try
+            {
+                // create
+                View result = apiInstance.Create(createView);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ViewApi.Create: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createView** | [**CreateView**](CreateView.md)| createView | 
+
+### Return type
+
+[**View**](View.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **201** | Created |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="export"></a>
 # **Export**

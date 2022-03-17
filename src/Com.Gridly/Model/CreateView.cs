@@ -26,41 +26,41 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// UpdateDependency
+    /// CreateView
     /// </summary>
-    [DataContract(Name = "UpdateDependency")]
-    public partial class UpdateDependency : IEquatable<UpdateDependency>, IValidatableObject
+    [DataContract(Name = "CreateView")]
+    public partial class CreateView : IEquatable<CreateView>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateDependency" /> class.
+        /// Initializes a new instance of the <see cref="CreateView" /> class.
         /// </summary>
-        /// <param name="newId">newId.</param>
-        /// <param name="sourceColumnId">sourceColumnId.</param>
-        /// <param name="targetColumnId">targetColumnId.</param>
-        public UpdateDependency(string newId = default(string), string sourceColumnId = default(string), string targetColumnId = default(string))
+        /// <param name="columns">columns.</param>
+        /// <param name="gridId">gridId.</param>
+        /// <param name="name">name.</param>
+        public CreateView(List<AddViewColumn> columns = default(List<AddViewColumn>), string gridId = default(string), string name = default(string))
         {
-            this.NewId = newId;
-            this.SourceColumnId = sourceColumnId;
-            this.TargetColumnId = targetColumnId;
+            this.Columns = columns;
+            this.GridId = gridId;
+            this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets NewId
+        /// Gets or Sets Columns
         /// </summary>
-        [DataMember(Name = "newId", EmitDefaultValue = false)]
-        public string NewId { get; set; }
+        [DataMember(Name = "columns", EmitDefaultValue = false)]
+        public List<AddViewColumn> Columns { get; set; }
 
         /// <summary>
-        /// Gets or Sets SourceColumnId
+        /// Gets or Sets GridId
         /// </summary>
-        [DataMember(Name = "sourceColumnId", EmitDefaultValue = false)]
-        public string SourceColumnId { get; set; }
+        [DataMember(Name = "gridId", EmitDefaultValue = false)]
+        public string GridId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TargetColumnId
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "targetColumnId", EmitDefaultValue = false)]
-        public string TargetColumnId { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,10 +69,10 @@ namespace Com.Gridly.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateDependency {\n");
-            sb.Append("  NewId: ").Append(NewId).Append("\n");
-            sb.Append("  SourceColumnId: ").Append(SourceColumnId).Append("\n");
-            sb.Append("  TargetColumnId: ").Append(TargetColumnId).Append("\n");
+            sb.Append("class CreateView {\n");
+            sb.Append("  Columns: ").Append(Columns).Append("\n");
+            sb.Append("  GridId: ").Append(GridId).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +93,15 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateDependency);
+            return this.Equals(input as CreateView);
         }
 
         /// <summary>
-        /// Returns true if UpdateDependency instances are equal
+        /// Returns true if CreateView instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateDependency to be compared</param>
+        /// <param name="input">Instance of CreateView to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateDependency input)
+        public bool Equals(CreateView input)
         {
             if (input == null)
             {
@@ -109,19 +109,20 @@ namespace Com.Gridly.Model
             }
             return 
                 (
-                    this.NewId == input.NewId ||
-                    (this.NewId != null &&
-                    this.NewId.Equals(input.NewId))
+                    this.Columns == input.Columns ||
+                    this.Columns != null &&
+                    input.Columns != null &&
+                    this.Columns.SequenceEqual(input.Columns)
                 ) && 
                 (
-                    this.SourceColumnId == input.SourceColumnId ||
-                    (this.SourceColumnId != null &&
-                    this.SourceColumnId.Equals(input.SourceColumnId))
+                    this.GridId == input.GridId ||
+                    (this.GridId != null &&
+                    this.GridId.Equals(input.GridId))
                 ) && 
                 (
-                    this.TargetColumnId == input.TargetColumnId ||
-                    (this.TargetColumnId != null &&
-                    this.TargetColumnId.Equals(input.TargetColumnId))
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
                 );
         }
 
@@ -134,17 +135,17 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.NewId != null)
+                if (this.Columns != null)
                 {
-                    hashCode = (hashCode * 59) + this.NewId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Columns.GetHashCode();
                 }
-                if (this.SourceColumnId != null)
+                if (this.GridId != null)
                 {
-                    hashCode = (hashCode * 59) + this.SourceColumnId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.GridId.GetHashCode();
                 }
-                if (this.TargetColumnId != null)
+                if (this.Name != null)
                 {
-                    hashCode = (hashCode * 59) + this.TargetColumnId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
                 return hashCode;
             }
@@ -157,13 +158,6 @@ namespace Com.Gridly.Model
         /// <returns>Validation Result</returns>
         public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
         {
-            // NewId (string) pattern
-            Regex regexNewId = new Regex(@"^(?!_)\\w+$", RegexOptions.CultureInvariant);
-            if (false == regexNewId.Match(this.NewId).Success)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NewId, must match a pattern of " + regexNewId, new [] { "NewId" });
-            }
-
             yield break;
         }
     }

@@ -1,15 +1,12 @@
-# Com.Gridly.Model.UpdateColumn
+# Com.Gridly.Model.CreateView
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | **string** |  | [optional] 
-**LanguageCode** | **string** |  | [optional] 
+**Columns** | [**List&lt;AddViewColumn&gt;**](AddViewColumn.md) |  | [optional] 
+**GridId** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
-**NewId** | **string** |  | [optional] 
-**NumberFormat** | [**NumberFormat**](NumberFormat.md) |  | [optional] 
-**SelectionOptions** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
