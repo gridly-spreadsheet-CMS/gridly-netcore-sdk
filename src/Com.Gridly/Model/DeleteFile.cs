@@ -26,25 +26,25 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// CreateBranch
+    /// DeleteFile
     /// </summary>
-    [DataContract(Name = "CreateBranch")]
-    public partial class CreateBranch : IEquatable<CreateBranch>, IValidatableObject
+    [DataContract(Name = "DeleteFile")]
+    public partial class DeleteFile : IEquatable<DeleteFile>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateBranch" /> class.
+        /// Initializes a new instance of the <see cref="DeleteFile" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        public CreateBranch(string name = default(string))
+        /// <param name="ids">ids.</param>
+        public DeleteFile(List<string> ids = default(List<string>))
         {
-            this.Name = name;
+            this.Ids = ids;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Gets or Sets Ids
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        [DataMember(Name = "ids", EmitDefaultValue = false)]
+        public List<string> Ids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -53,8 +53,8 @@ namespace Com.Gridly.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateBranch {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class DeleteFile {\n");
+            sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,15 +75,15 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateBranch);
+            return this.Equals(input as DeleteFile);
         }
 
         /// <summary>
-        /// Returns true if CreateBranch instances are equal
+        /// Returns true if DeleteFile instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateBranch to be compared</param>
+        /// <param name="input">Instance of DeleteFile to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateBranch input)
+        public bool Equals(DeleteFile input)
         {
             if (input == null)
             {
@@ -91,9 +91,10 @@ namespace Com.Gridly.Model
             }
             return 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
+                    this.Ids == input.Ids ||
+                    this.Ids != null &&
+                    input.Ids != null &&
+                    this.Ids.SequenceEqual(input.Ids)
                 );
         }
 
@@ -106,9 +107,9 @@ namespace Com.Gridly.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Name != null)
+                if (this.Ids != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
                 }
                 return hashCode;
             }

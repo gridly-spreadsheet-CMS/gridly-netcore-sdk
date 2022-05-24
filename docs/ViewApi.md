@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 <a name="importview"></a>
 # **ImportView**
-> void ImportView (string viewId, System.IO.Stream file, Object importRequest = null, Object type = null)
+> void ImportView (string viewId, System.IO.Stream file, string importRequest = null, string type = null)
 
 importView
 
@@ -294,8 +294,8 @@ namespace Example
             var apiInstance = new ViewApi(config);
             var viewId = viewId_example;  // string | viewId
             var file = BINARY_DATA_HERE;  // System.IO.Stream | The following file types are supported: csv, tsv, xls, xlsx and JSON
-            var importRequest = new Object(); // Object | importRequest (optional) 
-            var type = new Object(); // Object | type (optional) 
+            var importRequest = importRequest_example;  // string | importRequest (optional) 
+            var type = type_example;  // string | type (optional) 
 
             try
             {
@@ -319,8 +319,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **file** | **System.IO.Stream****System.IO.Stream**| The following file types are supported: csv, tsv, xls, xlsx and JSON | 
- **importRequest** | [**Object**](Object.md)| importRequest | [optional] 
- **type** | [**Object**](Object.md)| type | [optional] 
+ **importRequest** | **string**| importRequest | [optional] 
+ **type** | **string**| type | [optional] 
 
 ### Return type
 

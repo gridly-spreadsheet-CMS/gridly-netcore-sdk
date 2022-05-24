@@ -17,6 +17,7 @@ docs/CreateView.md
 docs/Database.md
 docs/DatabaseApi.md
 docs/DeleteDependency.md
+docs/DeleteFile.md
 docs/DeleteRecord.md
 docs/Dependency.md
 docs/Grid.md
@@ -102,6 +103,7 @@ src/Com.Gridly/Model/CreateProject.cs
 src/Com.Gridly/Model/CreateView.cs
 src/Com.Gridly/Model/Database.cs
 src/Com.Gridly/Model/DeleteDependency.cs
+src/Com.Gridly/Model/DeleteFile.cs
 src/Com.Gridly/Model/DeleteRecord.cs
 src/Com.Gridly/Model/Dependency.cs
 src/Com.Gridly/Model/Grid.cs
