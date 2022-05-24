@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="delete"></a>
 # **Delete**
-> void Delete (string columnId, string recordId, string viewId, DeleteFile deleteFileDTO)
+> void Delete (string columnId, string recordId, string viewId, DeleteFile deleteFile)
 
 delete
 
@@ -41,12 +41,12 @@ namespace Example
             var columnId = columnId_example;  // string | columnId
             var recordId = recordId_example;  // string | recordId
             var viewId = viewId_example;  // string | viewId
-            var deleteFileDTO = new DeleteFile(); // DeleteFile | deleteFileDTO
+            var deleteFile = new DeleteFile(); // DeleteFile | deleteFile
 
             try
             {
                 // delete
-                apiInstance.Delete(columnId, recordId, viewId, deleteFileDTO);
+                apiInstance.Delete(columnId, recordId, viewId, deleteFile);
             }
             catch (ApiException  e)
             {
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
  **columnId** | **string**| columnId | 
  **recordId** | **string**| recordId | 
  **viewId** | **string**| viewId | 
- **deleteFileDTO** | [**DeleteFile**](DeleteFile.md)| deleteFileDTO | 
+ **deleteFile** | [**DeleteFile**](DeleteFile.md)| deleteFile | 
 
 ### Return type
 
