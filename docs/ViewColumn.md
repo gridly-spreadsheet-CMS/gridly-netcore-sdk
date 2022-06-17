@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | [optional] 
 **DependsOn** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**Id** | **string** |  | [optional] 
 **IsSource** | **bool** |  | [optional] 
 **IsTarget** | **bool** |  | [optional] 
 **LanguageCode** | **string** |  | [optional] 

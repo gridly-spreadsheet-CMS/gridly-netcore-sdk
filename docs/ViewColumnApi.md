@@ -18,6 +18,8 @@ Method | HTTP request | Description
 
 add
 
+add
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -40,8 +42,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewColumnApi(config);
-            var columnId = columnId_example;  // string | columnId
-            var viewId = viewId_example;  // string | viewId
+            var columnId = "columnId_example";  // string | columnId
+            var viewId = "viewId_example";  // string | viewId
 
             try
             {
@@ -85,10 +87,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -97,6 +95,8 @@ Name | Type | Description  | Notes
 > ViewColumn Create (string viewId, CreateColumn createColumn)
 
 create
+
+Create a Column
 
 ### Example
 ```csharp
@@ -120,8 +120,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewColumnApi(config);
-            var viewId = viewId_example;  // string | viewId
-            var createColumn = new CreateColumn(); // CreateColumn | createColumn
+            var viewId = "viewId_example";  // string | viewId
+            var createColumn = new CreateColumn(); // CreateColumn | 
 
             try
             {
@@ -145,7 +145,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **createColumn** | [**CreateColumn**](CreateColumn.md)| createColumn | 
+ **createColumn** | [**CreateColumn**](CreateColumn.md)|  | 
 
 ### Return type
 
@@ -165,15 +165,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="delete"></a>
 # **Delete**
 > void Delete (string columnId, string viewId)
+
+delete
 
 delete
 
@@ -199,8 +198,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewColumnApi(config);
-            var columnId = columnId_example;  // string | columnId
-            var viewId = viewId_example;  // string | viewId
+            var columnId = "columnId_example";  // string | columnId
+            var viewId = "viewId_example";  // string | viewId
 
             try
             {
@@ -243,14 +242,14 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="get"></a>
 # **Get**
 > ViewColumn Get (string columnId, string viewId)
+
+get
 
 get
 
@@ -276,8 +275,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewColumnApi(config);
-            var columnId = columnId_example;  // string | columnId
-            var viewId = viewId_example;  // string | viewId
+            var columnId = "columnId_example";  // string | columnId
+            var viewId = "viewId_example";  // string | viewId
 
             try
             {
@@ -321,15 +320,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="remove"></a>
 # **Remove**
 > void Remove (string columnId, string viewId)
+
+remove
 
 remove
 
@@ -355,8 +353,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewColumnApi(config);
-            var columnId = columnId_example;  // string | columnId
-            var viewId = viewId_example;  // string | viewId
+            var columnId = "columnId_example";  // string | columnId
+            var viewId = "viewId_example";  // string | viewId
 
             try
             {
@@ -399,16 +397,14 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="update"></a>
 # **Update**
 > ViewColumn Update (string columnId, string viewId, UpdateColumn updateColumn)
+
+update
 
 update
 
@@ -434,9 +430,9 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewColumnApi(config);
-            var columnId = columnId_example;  // string | columnId
-            var viewId = viewId_example;  // string | viewId
-            var updateColumn = new UpdateColumn(); // UpdateColumn | updateColumn
+            var columnId = "columnId_example";  // string | columnId
+            var viewId = "viewId_example";  // string | viewId
+            var updateColumn = new UpdateColumn(); // UpdateColumn | 
 
             try
             {
@@ -461,7 +457,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **columnId** | **string**| columnId | 
  **viewId** | **string**| viewId | 
- **updateColumn** | [**UpdateColumn**](UpdateColumn.md)| updateColumn | 
+ **updateColumn** | [**UpdateColumn**](UpdateColumn.md)|  | 
 
 ### Return type
 
@@ -481,9 +477,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

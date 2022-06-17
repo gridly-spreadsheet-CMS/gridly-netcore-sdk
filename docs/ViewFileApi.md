@@ -16,6 +16,8 @@ Method | HTTP request | Description
 
 delete
 
+delete
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -38,10 +40,10 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewFileApi(config);
-            var columnId = columnId_example;  // string | columnId
-            var recordId = recordId_example;  // string | recordId
-            var viewId = viewId_example;  // string | viewId
-            var deleteFile = new DeleteFile(); // DeleteFile | deleteFile
+            var columnId = "columnId_example";  // string | columnId
+            var recordId = "recordId_example";  // string | recordId
+            var viewId = "viewId_example";  // string | viewId
+            var deleteFile = new DeleteFile(); // DeleteFile | 
 
             try
             {
@@ -66,7 +68,7 @@ Name | Type | Description  | Notes
  **columnId** | **string**| columnId | 
  **recordId** | **string**| recordId | 
  **viewId** | **string**| viewId | 
- **deleteFile** | [**DeleteFile**](DeleteFile.md)| deleteFile | 
+ **deleteFile** | [**DeleteFile**](DeleteFile.md)|  | 
 
 ### Return type
 
@@ -86,14 +88,14 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="download"></a>
 # **Download**
 > System.IO.Stream Download (string fileId, string viewId)
+
+download
 
 download
 
@@ -119,8 +121,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewFileApi(config);
-            var fileId = fileId_example;  // string | fileId
-            var viewId = viewId_example;  // string | viewId
+            var fileId = "fileId_example";  // string | fileId
+            var viewId = "viewId_example";  // string | viewId
 
             try
             {
@@ -163,16 +165,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
+| **0** | default response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="upload"></a>
 # **Upload**
-> UploadedFile Upload (string viewId, string columnId, System.IO.Stream file, string recordId)
+> UploadedFile Upload (string viewId, string columnId, string recordId, System.IO.Stream file)
+
+upload
 
 upload
 
@@ -198,15 +199,15 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewFileApi(config);
-            var viewId = viewId_example;  // string | viewId
-            var columnId = columnId_example;  // string | columnId
-            var file = BINARY_DATA_HERE;  // System.IO.Stream | file
-            var recordId = recordId_example;  // string | recordId
+            var viewId = "viewId_example";  // string | viewId
+            var columnId = "columnId_example";  // string | columnId
+            var recordId = "recordId_example";  // string | recordId
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
 
             try
             {
                 // upload
-                UploadedFile result = apiInstance.Upload(viewId, columnId, file, recordId);
+                UploadedFile result = apiInstance.Upload(viewId, columnId, recordId, file);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -226,8 +227,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **columnId** | **string**| columnId | 
- **file** | **System.IO.Stream****System.IO.Stream**| file | 
  **recordId** | **string**| recordId | 
+ **file** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
 
@@ -246,17 +247,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
 | **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="uploadzip"></a>
 # **UploadZip**
-> List&lt;Record&gt; UploadZip (string viewId, string columnId, System.IO.Stream file, string fileMappings)
+> List&lt;Record&gt; UploadZip (string viewId, string columnId, string fileMappings, System.IO.Stream file)
+
+uploadZip
 
 uploadZip
 
@@ -282,15 +281,15 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ViewFileApi(config);
-            var viewId = viewId_example;  // string | viewId
-            var columnId = columnId_example;  // string | columnId
-            var file = BINARY_DATA_HERE;  // System.IO.Stream | file
-            var fileMappings = fileMappings_example;  // string | fileMappings
+            var viewId = "viewId_example";  // string | viewId
+            var columnId = "columnId_example";  // string | columnId
+            var fileMappings = "fileMappings_example";  // string | fileMappings
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
 
             try
             {
                 // uploadZip
-                List<Record> result = apiInstance.UploadZip(viewId, columnId, file, fileMappings);
+                List<Record> result = apiInstance.UploadZip(viewId, columnId, fileMappings, file);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -310,8 +309,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
  **columnId** | **string**| columnId | 
- **file** | **System.IO.Stream****System.IO.Stream**| file | 
  **fileMappings** | **string**| fileMappings | 
+ **file** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
 
@@ -330,11 +329,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
+| **0** | default response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

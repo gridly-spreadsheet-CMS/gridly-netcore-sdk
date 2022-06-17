@@ -18,6 +18,8 @@ Method | HTTP request | Description
 
 create
 
+Create a Grid
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -40,8 +42,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(config);
-            var dbId = dbId_example;  // string | dbId
-            var createGrid = new CreateGrid(); // CreateGrid | createGrid
+            var dbId = "dbId_example";  // string | dbId
+            var createGrid = new CreateGrid(); // CreateGrid | 
 
             try
             {
@@ -65,7 +67,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
- **createGrid** | [**CreateGrid**](CreateGrid.md)| createGrid | 
+ **createGrid** | [**CreateGrid**](CreateGrid.md)|  | 
 
 ### Return type
 
@@ -85,9 +87,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -96,6 +95,8 @@ Name | Type | Description  | Notes
 > void Delete (string gridId)
 
 delete
+
+Delete a Grid
 
 ### Example
 ```csharp
@@ -119,7 +120,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(config);
-            var gridId = gridId_example;  // string | gridId
+            var gridId = "gridId_example";  // string | gridId
 
             try
             {
@@ -161,8 +162,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -171,6 +170,8 @@ void (empty response body)
 > Grid Get (string gridId)
 
 get
+
+Get a Grid
 
 ### Example
 ```csharp
@@ -194,7 +195,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(config);
-            var gridId = gridId_example;  // string | gridId
+            var gridId = "gridId_example";  // string | gridId
 
             try
             {
@@ -237,9 +238,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -248,6 +246,8 @@ Name | Type | Description  | Notes
 > List&lt;Grid&gt; List (string dbId)
 
 list
+
+Get a Grid
 
 ### Example
 ```csharp
@@ -271,7 +271,7 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(config);
-            var dbId = dbId_example;  // string | dbId
+            var dbId = "dbId_example";  // string | dbId
 
             try
             {
@@ -314,15 +314,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="listtemplategrids"></a>
 # **ListTemplateGrids**
 > List&lt;Grid&gt; ListTemplateGrids ()
+
+listTemplateGrids
 
 listTemplateGrids
 
@@ -387,9 +386,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -398,6 +394,8 @@ This endpoint does not need any parameter.
 > Grid Update (string gridId, UpdateGrid updateGrid)
 
 update
+
+Update a Grid
 
 ### Example
 ```csharp
@@ -421,8 +419,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new GridApi(config);
-            var gridId = gridId_example;  // string | gridId
-            var updateGrid = new UpdateGrid(); // UpdateGrid | updateGrid
+            var gridId = "gridId_example";  // string | gridId
+            var updateGrid = new UpdateGrid(); // UpdateGrid | 
 
             try
             {
@@ -446,7 +444,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gridId** | **string**| gridId | 
- **updateGrid** | [**UpdateGrid**](UpdateGrid.md)| updateGrid | 
+ **updateGrid** | [**UpdateGrid**](UpdateGrid.md)|  | 
 
 ### Return type
 
@@ -466,9 +464,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -13,7 +13,9 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> List&lt;Record&gt; Create (string viewId, List<SetRecord> createRecords)
+> List&lt;Record&gt; Create (string viewId, List<SetRecord> setRecord)
+
+create
 
 create
 
@@ -39,13 +41,13 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RecordApi(config);
-            var viewId = viewId_example;  // string | viewId
-            var createRecords = new List<SetRecord>(); // List<SetRecord> | createRecords
+            var viewId = "viewId_example";  // string | viewId
+            var setRecord = new List<SetRecord>(); // List<SetRecord> | 
 
             try
             {
                 // create
-                List<Record> result = apiInstance.Create(viewId, createRecords);
+                List<Record> result = apiInstance.Create(viewId, setRecord);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -64,7 +66,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **createRecords** | [**List&lt;SetRecord&gt;**](SetRecord.md)| createRecords | 
+ **setRecord** | [**List&lt;SetRecord&gt;**](SetRecord.md)|  | 
 
 ### Return type
 
@@ -84,16 +86,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **201** | Created |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="delete"></a>
 # **Delete**
 > void Delete (string viewId, DeleteRecord deleteRecord)
+
+delete
 
 delete
 
@@ -119,8 +119,8 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RecordApi(config);
-            var viewId = viewId_example;  // string | viewId
-            var deleteRecord = new DeleteRecord(); // DeleteRecord | deleteRecord
+            var viewId = "viewId_example";  // string | viewId
+            var deleteRecord = new DeleteRecord(); // DeleteRecord | 
 
             try
             {
@@ -143,7 +143,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **deleteRecord** | [**DeleteRecord**](DeleteRecord.md)| deleteRecord | 
+ **deleteRecord** | [**DeleteRecord**](DeleteRecord.md)|  | 
 
 ### Return type
 
@@ -163,14 +163,14 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="fetch"></a>
 # **Fetch**
-> List&lt;Record&gt; Fetch (string viewId, List<string> columnIds = null, string page = null, string query = null, string sort = null)
+> List&lt;Record&gt; Fetch (string viewId, List<string> columnIds = null, string page = null, string query = null, string sort = null, FetchFileOption? fetchFileOption = null)
+
+fetch
 
 fetch
 
@@ -196,16 +196,17 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RecordApi(config);
-            var viewId = viewId_example;  // string | viewId
+            var viewId = "viewId_example";  // string | viewId
             var columnIds = new List<string>(); // List<string> | columnIds (optional) 
-            var page = page_example;  // string | page (optional)  (default to "{}")
-            var query = query_example;  // string | query (optional)  (default to "{}")
-            var sort = sort_example;  // string | sort (optional)  (default to "{}")
+            var page = "\"{}\"";  // string | page (optional)  (default to "{}")
+            var query = "\"{}\"";  // string | query (optional)  (default to "{}")
+            var sort = "\"{}\"";  // string | sort (optional)  (default to "{}")
+            var fetchFileOption = (FetchFileOption) "all";  // FetchFileOption? | fetchFileOption (optional) 
 
             try
             {
                 // fetch
-                List<Record> result = apiInstance.Fetch(viewId, columnIds, page, query, sort);
+                List<Record> result = apiInstance.Fetch(viewId, columnIds, page, query, sort, fetchFileOption);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -228,6 +229,7 @@ Name | Type | Description  | Notes
  **page** | **string**| page | [optional] [default to &quot;{}&quot;]
  **query** | **string**| query | [optional] [default to &quot;{}&quot;]
  **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
+ **fetchFileOption** | **FetchFileOption?**| fetchFileOption | [optional] 
 
 ### Return type
 
@@ -247,15 +249,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
-| **404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="update"></a>
 # **Update**
-> List&lt;Record&gt; Update (string viewId, List<SetRecord> updateRecords)
+> List&lt;Record&gt; Update (string viewId, List<SetRecord> setRecord)
+
+update
 
 update
 
@@ -281,13 +282,13 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RecordApi(config);
-            var viewId = viewId_example;  // string | viewId
-            var updateRecords = new List<SetRecord>(); // List<SetRecord> | updateRecords
+            var viewId = "viewId_example";  // string | viewId
+            var setRecord = new List<SetRecord>(); // List<SetRecord> | 
 
             try
             {
                 // update
-                List<Record> result = apiInstance.Update(viewId, updateRecords);
+                List<Record> result = apiInstance.Update(viewId, setRecord);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -306,7 +307,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **updateRecords** | [**List&lt;SetRecord&gt;**](SetRecord.md)| updateRecords | 
+ **setRecord** | [**List&lt;SetRecord&gt;**](SetRecord.md)|  | 
 
 ### Return type
 
@@ -326,15 +327,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="updaterecord"></a>
 # **UpdateRecord**
-> Record UpdateRecord (string id, string viewId, SetRecord updateRecord, string path = null)
+> Record UpdateRecord (string id, string viewId, SetRecord setRecord, string path = null)
+
+updateRecord
 
 updateRecord
 
@@ -360,15 +360,15 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new RecordApi(config);
-            var id = id_example;  // string | id
-            var viewId = viewId_example;  // string | viewId
-            var updateRecord = new SetRecord(); // SetRecord | updateRecord
-            var path = path_example;  // string | path (optional) 
+            var id = "id_example";  // string | id
+            var viewId = "viewId_example";  // string | viewId
+            var setRecord = new SetRecord(); // SetRecord | 
+            var path = "path_example";  // string | path (optional) 
 
             try
             {
                 // updateRecord
-                Record result = apiInstance.UpdateRecord(id, viewId, updateRecord, path);
+                Record result = apiInstance.UpdateRecord(id, viewId, setRecord, path);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| id | 
  **viewId** | **string**| viewId | 
- **updateRecord** | [**SetRecord**](SetRecord.md)| updateRecord | 
+ **setRecord** | [**SetRecord**](SetRecord.md)|  | 
  **path** | **string**| path | [optional] 
 
 ### Return type
@@ -409,9 +409,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **204** | No Content |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

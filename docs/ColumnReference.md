@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Column** | [**ReferencedColumn**](ReferencedColumn.md) |  | [optional] 
 **Grid** | [**ReferencedGrid**](ReferencedGrid.md) |  | [optional] 
-**SelectionType** | **string** |  | [optional] 
+**Column** | [**ReferencedColumn**](ReferencedColumn.md) |  | [optional] 
 **Type** | **string** |  | [optional] 
+**SelectionType** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

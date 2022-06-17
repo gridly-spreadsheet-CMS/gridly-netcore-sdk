@@ -20,8 +20,12 @@ docs/DeleteDependency.md
 docs/DeleteFile.md
 docs/DeleteRecord.md
 docs/Dependency.md
+docs/ExportFileHeader.md
+docs/FetchFileOption.md
+docs/FileType.md
 docs/Grid.md
 docs/GridApi.md
+docs/Group.md
 docs/NumberFormat.md
 docs/Privilege.md
 docs/Project.md
@@ -50,6 +54,7 @@ docs/ViewColumn.md
 docs/ViewColumnApi.md
 docs/ViewDependencyApi.md
 docs/ViewFileApi.md
+docs/ViewType.md
 git_push.sh
 src/Com.Gridly.Test/Api/BranchApiTests.cs
 src/Com.Gridly.Test/Api/DatabaseApiTests.cs
@@ -106,7 +111,11 @@ src/Com.Gridly/Model/DeleteDependency.cs
 src/Com.Gridly/Model/DeleteFile.cs
 src/Com.Gridly/Model/DeleteRecord.cs
 src/Com.Gridly/Model/Dependency.cs
+src/Com.Gridly/Model/ExportFileHeader.cs
+src/Com.Gridly/Model/FetchFileOption.cs
+src/Com.Gridly/Model/FileType.cs
 src/Com.Gridly/Model/Grid.cs
+src/Com.Gridly/Model/Group.cs
 src/Com.Gridly/Model/NumberFormat.cs
 src/Com.Gridly/Model/Privilege.cs
 src/Com.Gridly/Model/Project.cs
@@ -128,3 +137,4 @@ src/Com.Gridly/Model/UpdateProject.cs
 src/Com.Gridly/Model/UploadedFile.cs
 src/Com.Gridly/Model/View.cs
 src/Com.Gridly/Model/ViewColumn.cs
+src/Com.Gridly/Model/ViewType.cs

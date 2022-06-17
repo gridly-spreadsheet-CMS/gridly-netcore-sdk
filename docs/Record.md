@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cells** | [**List&lt;Cell&gt;**](Cell.md) |  | [optional] 
 **Id** | **string** |  | [optional] 
+**Cells** | [**List&lt;Cell&gt;**](Cell.md) |  | [optional] 
 **LastModifiedBy** | **string** |  | [optional] 
 **LastModifiedTime** | **DateTime** |  | [optional] 
 **Path** | **string** |  | [optional] 
