@@ -31,7 +31,7 @@ namespace Com.Gridly.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.2.5";
+        public const string Version = "1.2.6";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -113,7 +113,7 @@ namespace Com.Gridly.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "Gridly NetCore SDK 1.2.5";
+            UserAgent = "Gridly NetCore SDK 1.2.6";
             BasePath = "https://api.gridly.com";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -521,7 +521,7 @@ namespace Com.Gridly.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 3.29.0\n";
-            report += "    SDK Package Version: 1.2.5\n";
+            report += "    SDK Package Version: 1.2.6\n";
 
             return report;
         }
