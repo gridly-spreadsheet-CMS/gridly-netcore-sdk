@@ -32,40 +32,40 @@ namespace Com.Gridly.Model
     public enum FileType
     {
         /// <summary>
-        /// Enum Csv for value: csv
+        /// Enum csv for value: csv
         /// </summary>
         [EnumMember(Value = "csv")]
-        Csv = 1,
+        csv = 1,
 
         /// <summary>
-        /// Enum Tsv for value: tsv
+        /// Enum tsv for value: tsv
         /// </summary>
         [EnumMember(Value = "tsv")]
-        Tsv = 2,
+        tsv = 2,
 
         /// <summary>
-        /// Enum Xls for value: xls
+        /// Enum xls for value: xls
         /// </summary>
         [EnumMember(Value = "xls")]
-        Xls = 3,
+        xls = 3,
 
         /// <summary>
-        /// Enum Xlsx for value: xlsx
+        /// Enum xlsx for value: xlsx
         /// </summary>
         [EnumMember(Value = "xlsx")]
-        Xlsx = 4,
+        xlsx = 4,
 
         /// <summary>
-        /// Enum Json for value: json
+        /// Enum json for value: json
         /// </summary>
         [EnumMember(Value = "json")]
-        Json = 5,
+        json = 5,
 
         /// <summary>
-        /// Enum Po for value: po
+        /// Enum po for value: po
         /// </summary>
         [EnumMember(Value = "po")]
-        Po = 6
+        po = 6
 
     }
 

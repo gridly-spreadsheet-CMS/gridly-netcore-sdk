@@ -217,7 +217,6 @@ Class | Method | HTTP request | Description
  - [Model.UploadedFile](docs/UploadedFile.md)
  - [Model.View](docs/View.md)
  - [Model.ViewColumn](docs/ViewColumn.md)
- - [Model.ViewType](docs/ViewType.md)
 
 
 <a name="documentation-for-authorization"></a>

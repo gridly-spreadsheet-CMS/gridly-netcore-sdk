@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 <a name="importview"></a>
 # **ImportView**
-> void ImportView (string viewId, System.IO.Stream file, string importRequest = null, string type = null)
+> void ImportView (string viewId, System.IO.Stream file, string importRequest = null, FileType? type = null)
 
 importView
 
@@ -291,9 +291,9 @@ namespace Example
 
             var apiInstance = new ViewApi(config);
             var viewId = "viewId_example";  // string | viewId
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | The following file types are supported: csv, tsv, xls, xlsx and json
             var importRequest = "\"{}\"";  // string | importRequest (optional)  (default to "{}")
-            var type = "csv";  // string | type (optional)  (default to csv)
+            var type = (FileType) "csv";  // FileType? | type (optional) 
 
             try
             {
@@ -316,9 +316,9 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **file** | **System.IO.Stream****System.IO.Stream**|  | 
+ **file** | **System.IO.Stream****System.IO.Stream**| The following file types are supported: csv, tsv, xls, xlsx and json | 
  **importRequest** | **string**| importRequest | [optional] [default to &quot;{}&quot;]
- **type** | **string**| type | [optional] [default to csv]
+ **type** | **FileType?**| type | [optional] 
 
 ### Return type
 
@@ -343,7 +343,7 @@ void (empty response body)
 
 <a name="list"></a>
 # **List**
-> List&lt;View&gt; List (string branchId = null, string gridId = null, ViewType? type = null)
+> List&lt;View&gt; List (string branchId = null, string gridId = null, string type = null)
 
 list
 
@@ -373,7 +373,7 @@ namespace Example
             var apiInstance = new ViewApi(config);
             var branchId = "branchId_example";  // string | branchId (optional) 
             var gridId = "gridId_example";  // string | gridId (optional) 
-            var type = (ViewType) "defaultView";  // ViewType? | type (optional) 
+            var type = "defaultView";  // string | type (optional) 
 
             try
             {
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **branchId** | **string**| branchId | [optional] 
  **gridId** | **string**| gridId | [optional] 
- **type** | **ViewType?**| type | [optional] 
+ **type** | **string**| type | [optional] 
 
 ### Return type
 

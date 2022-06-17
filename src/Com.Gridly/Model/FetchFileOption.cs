@@ -32,22 +32,22 @@ namespace Com.Gridly.Model
     public enum FetchFileOption
     {
         /// <summary>
-        /// Enum All for value: all
+        /// Enum all for value: all
         /// </summary>
         [EnumMember(Value = "all")]
-        All = 1,
+        all = 1,
 
         /// <summary>
-        /// Enum Id for value: id
+        /// Enum id for value: id
         /// </summary>
         [EnumMember(Value = "id")]
-        Id = 2,
+        id = 2,
 
         /// <summary>
-        /// Enum Name for value: name
+        /// Enum name for value: name
         /// </summary>
         [EnumMember(Value = "name")]
-        Name = 3
+        name = 3
 
     }
 

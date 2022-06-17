@@ -32,16 +32,16 @@ namespace Com.Gridly.Model
     public enum ExportFileHeader
     {
         /// <summary>
-        /// Enum None for value: none
+        /// Enum none for value: none
         /// </summary>
         [EnumMember(Value = "none")]
-        None = 1,
+        none = 1,
 
         /// <summary>
-        /// Enum ColumnName for value: columnName
+        /// Enum columnName for value: columnName
         /// </summary>
         [EnumMember(Value = "columnName")]
-        ColumnName = 2
+        columnName = 2
 
     }
 
