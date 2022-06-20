@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> List&lt;Record&gt; Create (string viewId, List<SetRecord> setRecord)
+> List&lt;Record&gt; Create (string viewId, List<SetRecord> createRecords)
 
 create
 
@@ -42,12 +42,12 @@ namespace Example
 
             var apiInstance = new RecordApi(config);
             var viewId = "viewId_example";  // string | viewId
-            var setRecord = new List<SetRecord>(); // List<SetRecord> | 
+            var createRecords = new List<SetRecord>(); // List<SetRecord> | createRecords
 
             try
             {
                 // create
-                List<Record> result = apiInstance.Create(viewId, setRecord);
+                List<Record> result = apiInstance.Create(viewId, createRecords);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +66,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **setRecord** | [**List&lt;SetRecord&gt;**](SetRecord.md)|  | 
+ **createRecords** | [**List&lt;SetRecord&gt;**](SetRecord.md)| createRecords | 
 
 ### Return type
 

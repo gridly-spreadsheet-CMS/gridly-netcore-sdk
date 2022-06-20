@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo><!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net47;net5.0;net6.0</TargetFrameworks>
     <AssemblyName>Com.Gridly</AssemblyName>
     <PackageId>Com.Gridly</PackageId>
     <OutputType>Library</OutputType>

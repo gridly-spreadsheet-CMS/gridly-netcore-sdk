@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="create"></a>
 # **Create**
-> Database Create (long projectId, CreateDatabase createDatabase)
+> Database Create (long projectId, CreateDatabase body)
 
 create
 
@@ -41,12 +41,12 @@ namespace Example
 
             var apiInstance = new DatabaseApi(config);
             var projectId = 789L;  // long | projectId
-            var createDatabase = new CreateDatabase(); // CreateDatabase | 
+            var body = new CreateDatabase(); // CreateDatabase | body
 
             try
             {
                 // create
-                Database result = apiInstance.Create(projectId, createDatabase);
+                Database result = apiInstance.Create(projectId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +65,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **long**| projectId | 
- **createDatabase** | [**CreateDatabase**](CreateDatabase.md)|  | 
+ **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
 
 ### Return type
 
@@ -163,7 +163,7 @@ void (empty response body)
 
 <a name="duplicate"></a>
 # **Duplicate**
-> Database Duplicate (string dbId, long projectId, CreateDatabase createDatabase)
+> Database Duplicate (string dbId, long projectId, CreateDatabase body)
 
 duplicate
 
@@ -191,12 +191,12 @@ namespace Example
             var apiInstance = new DatabaseApi(config);
             var dbId = "dbId_example";  // string | dbId
             var projectId = 789L;  // long | projectId
-            var createDatabase = new CreateDatabase(); // CreateDatabase | 
+            var body = new CreateDatabase(); // CreateDatabase | body
 
             try
             {
                 // duplicate
-                Database result = apiInstance.Duplicate(dbId, projectId, createDatabase);
+                Database result = apiInstance.Duplicate(dbId, projectId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
  **projectId** | **long**| projectId | 
- **createDatabase** | [**CreateDatabase**](CreateDatabase.md)|  | 
+ **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
 
 ### Return type
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 <a name="update"></a>
 # **Update**
-> Database Update (string dbId, UpdateDatabase updateDatabase)
+> Database Update (string dbId, UpdateDatabase body)
 
 update
 
@@ -424,12 +424,12 @@ namespace Example
 
             var apiInstance = new DatabaseApi(config);
             var dbId = "dbId_example";  // string | dbId
-            var updateDatabase = new UpdateDatabase(); // UpdateDatabase | 
+            var body = new UpdateDatabase(); // UpdateDatabase | body
 
             try
             {
                 // update
-                Database result = apiInstance.Update(dbId, updateDatabase);
+                Database result = apiInstance.Update(dbId, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -448,7 +448,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dbId** | **string**| dbId | 
- **updateDatabase** | [**UpdateDatabase**](UpdateDatabase.md)|  | 
+ **body** | [**UpdateDatabase**](UpdateDatabase.md)| body | 
 
 ### Return type
 

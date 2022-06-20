@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="export"></a>
 # **Export**
-> System.IO.Stream Export (string viewId, List<string> columnIds = null, ExportFileHeader? fileHeader = null, string query = null, string sort = null, FileType? type = null)
+> System.IO.Stream Export (string viewId, List<string> columnIds = null, ExportFileHeader? fileHeader = null, string query = null, string sort = null, string type = null)
 
 export
 
@@ -123,7 +123,7 @@ namespace Example
             var fileHeader = (ExportFileHeader) "none";  // ExportFileHeader? | fileHeader (optional) 
             var query = "\"{}\"";  // string | query (optional)  (default to "{}")
             var sort = "\"{}\"";  // string | sort (optional)  (default to "{}")
-            var type = (FileType) "csv";  // FileType? | type (optional) 
+            var type = "csv";  // string | type (optional)  (default to csv)
 
             try
             {
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
  **fileHeader** | **ExportFileHeader?**| fileHeader | [optional] 
  **query** | **string**| query | [optional] [default to &quot;{}&quot;]
  **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
- **type** | **FileType?**| type | [optional] 
+ **type** | **string**| type | [optional] [default to csv]
 
 ### Return type
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 <a name="importview"></a>
 # **ImportView**
-> void ImportView (string viewId, System.IO.Stream file, string importRequest = null, FileType? type = null)
+> void ImportView (string viewId, System.IO.Stream file, string importRequest = null, string type = null)
 
 importView
 
@@ -293,7 +293,7 @@ namespace Example
             var viewId = "viewId_example";  // string | viewId
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | The following file types are supported: csv, tsv, xls, xlsx and json
             var importRequest = "\"{}\"";  // string | importRequest (optional)  (default to "{}")
-            var type = (FileType) "csv";  // FileType? | type (optional) 
+            var type = "csv";  // string | type (optional)  (default to csv)
 
             try
             {
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
  **viewId** | **string**| viewId | 
  **file** | **System.IO.Stream****System.IO.Stream**| The following file types are supported: csv, tsv, xls, xlsx and json | 
  **importRequest** | **string**| importRequest | [optional] [default to &quot;{}&quot;]
- **type** | **FileType?**| type | [optional] 
+ **type** | **string**| type | [optional] [default to csv]
 
 ### Return type
 

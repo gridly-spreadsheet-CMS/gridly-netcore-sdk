@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// CreateDatabase
+    /// body
     /// </summary>
     [DataContract(Name = "CreateDatabase")]
     public partial class CreateDatabase : IEquatable<CreateDatabase>, IValidatableObject

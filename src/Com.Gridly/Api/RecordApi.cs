@@ -34,10 +34,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Record&gt;</returns>
-        List<Record> Create(string viewId, List<SetRecord> setRecord, int operationIndex = 0);
+        List<Record> Create(string viewId, List<SetRecord> createRecords, int operationIndex = 0);
 
         /// <summary>
         /// create
@@ -47,10 +47,10 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Record&gt;</returns>
-        ApiResponse<List<Record>> CreateWithHttpInfo(string viewId, List<SetRecord> setRecord, int operationIndex = 0);
+        ApiResponse<List<Record>> CreateWithHttpInfo(string viewId, List<SetRecord> createRecords, int operationIndex = 0);
         /// <summary>
         /// delete
         /// </summary>
@@ -180,11 +180,11 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Record&gt;</returns>
-        System.Threading.Tasks.Task<List<Record>> CreateAsync(string viewId, List<SetRecord> setRecord, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Record>> CreateAsync(string viewId, List<SetRecord> createRecords, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// create
@@ -194,11 +194,11 @@ namespace Com.Gridly.Api
         /// </remarks>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Record&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Record>>> CreateWithHttpInfoAsync(string viewId, List<SetRecord> setRecord, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Record>>> CreateWithHttpInfoAsync(string viewId, List<SetRecord> createRecords, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// delete
         /// </summary>
@@ -444,12 +444,12 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Record&gt;</returns>
-        public List<Record> Create(string viewId, List<SetRecord> setRecord, int operationIndex = 0)
+        public List<Record> Create(string viewId, List<SetRecord> createRecords, int operationIndex = 0)
         {
-            Com.Gridly.Client.ApiResponse<List<Record>> localVarResponse = CreateWithHttpInfo(viewId, setRecord);
+            Com.Gridly.Client.ApiResponse<List<Record>> localVarResponse = CreateWithHttpInfo(viewId, createRecords);
             return localVarResponse.Data;
         }
 
@@ -458,10 +458,10 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Record&gt;</returns>
-        public Com.Gridly.Client.ApiResponse<List<Record>> CreateWithHttpInfo(string viewId, List<SetRecord> setRecord, int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<List<Record>> CreateWithHttpInfo(string viewId, List<SetRecord> createRecords, int operationIndex = 0)
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
@@ -469,10 +469,10 @@ namespace Com.Gridly.Api
                 throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Create");
             }
 
-            // verify the required parameter 'setRecord' is set
-            if (setRecord == null)
+            // verify the required parameter 'createRecords' is set
+            if (createRecords == null)
             {
-                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'setRecord' when calling RecordApi->Create");
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'createRecords' when calling RecordApi->Create");
             }
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
@@ -499,7 +499,7 @@ namespace Com.Gridly.Api
             }
 
             localVarRequestOptions.PathParameters.Add("viewId", Com.Gridly.Client.ClientUtils.ParameterToString(viewId)); // path parameter
-            localVarRequestOptions.Data = setRecord;
+            localVarRequestOptions.Data = createRecords;
 
             localVarRequestOptions.Operation = "RecordApi.Create";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -529,13 +529,13 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Record&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Record>> CreateAsync(string viewId, List<SetRecord> setRecord, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Record>> CreateAsync(string viewId, List<SetRecord> createRecords, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Com.Gridly.Client.ApiResponse<List<Record>> localVarResponse = await CreateWithHttpInfoAsync(viewId, setRecord, operationIndex, cancellationToken).ConfigureAwait(false);
+            Com.Gridly.Client.ApiResponse<List<Record>> localVarResponse = await CreateWithHttpInfoAsync(viewId, createRecords, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -544,11 +544,11 @@ namespace Com.Gridly.Api
         /// </summary>
         /// <exception cref="Com.Gridly.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="viewId">viewId</param>
-        /// <param name="setRecord"></param>
+        /// <param name="createRecords">createRecords</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Record&gt;)</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<List<Record>>> CreateWithHttpInfoAsync(string viewId, List<SetRecord> setRecord, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<List<Record>>> CreateWithHttpInfoAsync(string viewId, List<SetRecord> createRecords, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'viewId' is set
             if (viewId == null)
@@ -556,10 +556,10 @@ namespace Com.Gridly.Api
                 throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'viewId' when calling RecordApi->Create");
             }
 
-            // verify the required parameter 'setRecord' is set
-            if (setRecord == null)
+            // verify the required parameter 'createRecords' is set
+            if (createRecords == null)
             {
-                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'setRecord' when calling RecordApi->Create");
+                throw new Com.Gridly.Client.ApiException(400, "Missing required parameter 'createRecords' when calling RecordApi->Create");
             }
 
 
@@ -587,7 +587,7 @@ namespace Com.Gridly.Api
             }
 
             localVarRequestOptions.PathParameters.Add("viewId", Com.Gridly.Client.ClientUtils.ParameterToString(viewId)); // path parameter
-            localVarRequestOptions.Data = setRecord;
+            localVarRequestOptions.Data = createRecords;
 
             localVarRequestOptions.Operation = "RecordApi.Create";
             localVarRequestOptions.OperationIndex = operationIndex;
