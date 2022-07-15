@@ -282,8 +282,8 @@ namespace Example
 
             var apiInstance = new ViewFileApi(config);
             var viewId = "viewId_example";  // string | viewId
-            var columnId = "columnId_example";  // string | columnId
-            var fileMappings = "fileMappings_example";  // string | fileMappings
+            var columnId = "columnId_example";  // string | 
+            var fileMappings = "fileMappings_example";  // string | 
             var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
 
             try
@@ -308,8 +308,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **viewId** | **string**| viewId | 
- **columnId** | **string**| columnId | 
- **fileMappings** | **string**| fileMappings | 
+ **columnId** | **string**|  | 
+ **fileMappings** | **string**|  | 
  **file** | **System.IO.Stream****System.IO.Stream**|  | 
 
 ### Return type
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data
+ - **Content-Type**: multipart/form-data, application/json
  - **Accept**: application/json
 
 

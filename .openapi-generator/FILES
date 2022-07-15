@@ -46,6 +46,7 @@ docs/UpdateDatabase.md
 docs/UpdateDependency.md
 docs/UpdateGrid.md
 docs/UpdateProject.md
+docs/UploadZipRequest.md
 docs/UploadedFile.md
 docs/View.md
 docs/ViewApi.md
@@ -131,6 +132,7 @@ src/Com.Gridly/Model/UpdateDatabase.cs
 src/Com.Gridly/Model/UpdateDependency.cs
 src/Com.Gridly/Model/UpdateGrid.cs
 src/Com.Gridly/Model/UpdateProject.cs
+src/Com.Gridly/Model/UploadZipRequest.cs
 src/Com.Gridly/Model/UploadedFile.cs
 src/Com.Gridly/Model/View.cs
 src/Com.Gridly/Model/ViewColumn.cs
