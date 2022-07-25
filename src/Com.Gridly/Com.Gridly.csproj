@@ -12,7 +12,7 @@
     <Description>Gridly NetCore SDK 1.2.8</Description>
     <Copyright>Copyright @ 2022 LocalizeDirect AB</Copyright>
     <RootNamespace>Com.Gridly</RootNamespace>
-    <Version>1.2.7</Version>
+    <Version>1.2.8</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Com.Gridly.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

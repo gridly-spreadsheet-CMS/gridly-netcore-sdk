@@ -31,7 +31,7 @@ namespace Com.Gridly.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.2.7";
+        public const string Version = "1.2.8";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -521,7 +521,7 @@ namespace Com.Gridly.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 3.31.0\n";
-            report += "    SDK Package Version: 1.2.7\n";
+            report += "    SDK Package Version: 1.2.8\n";
 
             return report;
         }
