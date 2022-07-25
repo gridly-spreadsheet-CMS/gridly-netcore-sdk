@@ -62,19 +62,19 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets SourceColumnId
         /// </summary>
-        [DataMember(Name = "sourceColumnId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "sourceColumnId", IsRequired = true, EmitDefaultValue = true)]
         public string SourceColumnId { get; set; }
 
         /// <summary>
         /// Gets or Sets TargetColumnId
         /// </summary>
-        [DataMember(Name = "targetColumnId", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "targetColumnId", IsRequired = true, EmitDefaultValue = true)]
         public string TargetColumnId { get; set; }
 
         /// <summary>

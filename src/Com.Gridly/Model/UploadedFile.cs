@@ -49,25 +49,25 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets OriginalName
         /// </summary>
-        [DataMember(Name = "originalName", EmitDefaultValue = false)]
+        [DataMember(Name = "originalName", EmitDefaultValue = true)]
         public string OriginalName { get; set; }
 
         /// <summary>
         /// Gets or Sets ContentType
         /// </summary>
-        [DataMember(Name = "contentType", EmitDefaultValue = false)]
+        [DataMember(Name = "contentType", EmitDefaultValue = true)]
         public string ContentType { get; set; }
 
         /// <summary>
         /// Gets or Sets Size
         /// </summary>
-        [DataMember(Name = "size", EmitDefaultValue = false)]
+        [DataMember(Name = "size", EmitDefaultValue = true)]
         public long Size { get; set; }
 
         /// <summary>

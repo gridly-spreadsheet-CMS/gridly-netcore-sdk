@@ -55,7 +55,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Defines SelectionType
@@ -81,7 +81,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets SelectionType
         /// </summary>
-        [DataMember(Name = "selectionType", EmitDefaultValue = false)]
+        [DataMember(Name = "selectionType", EmitDefaultValue = true)]
         public SelectionTypeEnum? SelectionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ColumnReference" /> class.
@@ -101,13 +101,13 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Grid
         /// </summary>
-        [DataMember(Name = "grid", EmitDefaultValue = false)]
+        [DataMember(Name = "grid", EmitDefaultValue = true)]
         public ReferencedGrid Grid { get; set; }
 
         /// <summary>
         /// Gets or Sets Column
         /// </summary>
-        [DataMember(Name = "column", EmitDefaultValue = false)]
+        [DataMember(Name = "column", EmitDefaultValue = true)]
         public ReferencedColumn Column { get; set; }
 
         /// <summary>

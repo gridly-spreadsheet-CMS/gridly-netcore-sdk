@@ -47,19 +47,19 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Columns
         /// </summary>
-        [DataMember(Name = "columns", EmitDefaultValue = false)]
+        [DataMember(Name = "columns", EmitDefaultValue = true)]
         public List<AddViewColumn> Columns { get; set; }
 
         /// <summary>
         /// Gets or Sets GridId
         /// </summary>
-        [DataMember(Name = "gridId", EmitDefaultValue = false)]
+        [DataMember(Name = "gridId", EmitDefaultValue = true)]
         public string GridId { get; set; }
 
         /// <summary>

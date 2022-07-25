@@ -57,49 +57,49 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets ProjectId
         /// </summary>
-        [DataMember(Name = "projectId", EmitDefaultValue = false)]
+        [DataMember(Name = "projectId", EmitDefaultValue = true)]
         public long ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets Grids
         /// </summary>
-        [DataMember(Name = "grids", EmitDefaultValue = false)]
+        [DataMember(Name = "grids", EmitDefaultValue = true)]
         public List<Grid> Grids { get; set; }
 
         /// <summary>
         /// Gets or Sets Views
         /// </summary>
-        [DataMember(Name = "views", EmitDefaultValue = false)]
+        [DataMember(Name = "views", EmitDefaultValue = true)]
         public List<View> Views { get; set; }
 
         /// <summary>
         /// Gets or Sets Project
         /// </summary>
-        [DataMember(Name = "project", EmitDefaultValue = false)]
+        [DataMember(Name = "project", EmitDefaultValue = true)]
         public Project Project { get; set; }
 
         /// <summary>
         /// Gets or Sets Groups
         /// </summary>
-        [DataMember(Name = "groups", EmitDefaultValue = false)]
+        [DataMember(Name = "groups", EmitDefaultValue = true)]
         public List<Group> Groups { get; set; }
 
         /// <summary>

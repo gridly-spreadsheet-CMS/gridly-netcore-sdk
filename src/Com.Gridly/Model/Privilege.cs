@@ -57,49 +57,49 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public long Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Label
         /// </summary>
-        [DataMember(Name = "label", EmitDefaultValue = false)]
+        [DataMember(Name = "label", EmitDefaultValue = true)]
         public string Label { get; set; }
 
         /// <summary>
         /// Gets or Sets Level
         /// </summary>
-        [DataMember(Name = "level", EmitDefaultValue = false)]
+        [DataMember(Name = "level", EmitDefaultValue = true)]
         public string Level { get; set; }
 
         /// <summary>
         /// Gets or Sets Order
         /// </summary>
-        [DataMember(Name = "order", EmitDefaultValue = false)]
+        [DataMember(Name = "order", EmitDefaultValue = true)]
         public int Order { get; set; }
 
         /// <summary>
         /// Gets or Sets ServiceId
         /// </summary>
-        [DataMember(Name = "serviceId", EmitDefaultValue = false)]
+        [DataMember(Name = "serviceId", EmitDefaultValue = true)]
         public string ServiceId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Extra
         /// </summary>
-        [DataMember(Name = "extra", EmitDefaultValue = false)]
+        [DataMember(Name = "extra", EmitDefaultValue = true)]
         public string Extra { get; set; }
 
         /// <summary>

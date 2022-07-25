@@ -55,7 +55,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets RecordIdentifierType
         /// </summary>
-        [DataMember(Name = "recordIdentifierType", EmitDefaultValue = false)]
+        [DataMember(Name = "recordIdentifierType", EmitDefaultValue = true)]
         public RecordIdentifierTypeEnum? RecordIdentifierType { get; set; }
         /// <summary>
         /// Defines Status
@@ -135,7 +135,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", EmitDefaultValue = true)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Branch" /> class.
@@ -165,37 +165,37 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Columns
         /// </summary>
-        [DataMember(Name = "columns", EmitDefaultValue = false)]
+        [DataMember(Name = "columns", EmitDefaultValue = true)]
         public List<ViewColumn> Columns { get; set; }
 
         /// <summary>
         /// Gets or Sets DefaultAccessViewId
         /// </summary>
-        [DataMember(Name = "defaultAccessViewId", EmitDefaultValue = false)]
+        [DataMember(Name = "defaultAccessViewId", EmitDefaultValue = true)]
         public string DefaultAccessViewId { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public Dictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>

@@ -57,43 +57,43 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public long Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Level
         /// </summary>
-        [DataMember(Name = "level", EmitDefaultValue = false)]
+        [DataMember(Name = "level", EmitDefaultValue = true)]
         public string Level { get; set; }
 
         /// <summary>
         /// Gets or Sets Privileges
         /// </summary>
-        [DataMember(Name = "privileges", EmitDefaultValue = false)]
+        [DataMember(Name = "privileges", EmitDefaultValue = true)]
         public List<Privilege> Privileges { get; set; }
 
         /// <summary>
         /// Gets or Sets PrivilegeIds
         /// </summary>
-        [DataMember(Name = "privilegeIds", EmitDefaultValue = false)]
+        [DataMember(Name = "privilegeIds", EmitDefaultValue = true)]
         public List<long> PrivilegeIds { get; set; }
 
         /// <summary>

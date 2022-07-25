@@ -45,13 +45,13 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Ids
         /// </summary>
-        [DataMember(Name = "ids", EmitDefaultValue = false)]
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
         public List<string> Ids { get; set; }
 
         /// <summary>
         /// Gets or Sets Identifiers
         /// </summary>
-        [DataMember(Name = "identifiers", EmitDefaultValue = false)]
+        [DataMember(Name = "identifiers", EmitDefaultValue = true)]
         public List<RecordIdentifierWrapper> Identifiers { get; set; }
 
         /// <summary>

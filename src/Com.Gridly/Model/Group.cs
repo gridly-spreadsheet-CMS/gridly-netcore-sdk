@@ -55,7 +55,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Group" /> class.
@@ -83,31 +83,31 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets GroupId
         /// </summary>
-        [DataMember(Name = "groupId", EmitDefaultValue = false)]
+        [DataMember(Name = "groupId", EmitDefaultValue = true)]
         public long GroupId { get; set; }
 
         /// <summary>
         /// Gets or Sets CompanyId
         /// </summary>
-        [DataMember(Name = "companyId", EmitDefaultValue = false)]
+        [DataMember(Name = "companyId", EmitDefaultValue = true)]
         public long CompanyId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets LogoUrl
         /// </summary>
-        [DataMember(Name = "logoUrl", EmitDefaultValue = false)]
+        [DataMember(Name = "logoUrl", EmitDefaultValue = true)]
         public string LogoUrl { get; set; }
 
         /// <summary>

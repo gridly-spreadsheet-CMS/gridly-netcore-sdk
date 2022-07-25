@@ -53,37 +53,37 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public long Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets Role
         /// </summary>
-        [DataMember(Name = "role", EmitDefaultValue = false)]
+        [DataMember(Name = "role", EmitDefaultValue = true)]
         public Role Role { get; set; }
 
         /// <summary>
         /// Gets or Sets Databases
         /// </summary>
-        [DataMember(Name = "databases", EmitDefaultValue = false)]
+        [DataMember(Name = "databases", EmitDefaultValue = true)]
         public List<Database> Databases { get; set; }
 
         /// <summary>
         /// Gets or Sets Groups
         /// </summary>
-        [DataMember(Name = "groups", EmitDefaultValue = false)]
+        [DataMember(Name = "groups", EmitDefaultValue = true)]
         public List<Group> Groups { get; set; }
 
         /// <summary>

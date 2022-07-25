@@ -9,7 +9,7 @@
     <Authors>LocalizeDirect AB</Authors>
     <Company>LocalizeDirect AB</Company>
     <AssemblyTitle>Gridly SDK</AssemblyTitle>
-    <Description>Gridly NetCore SDK 1.2.7</Description>
+    <Description>Gridly NetCore SDK 1.2.8</Description>
     <Copyright>Copyright @ 2022 LocalizeDirect AB</Copyright>
     <RootNamespace>Com.Gridly</RootNamespace>
     <Version>1.2.7</Version>

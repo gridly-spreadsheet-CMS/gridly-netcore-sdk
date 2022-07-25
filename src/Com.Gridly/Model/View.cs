@@ -109,7 +109,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets GridStatus
         /// </summary>
-        [DataMember(Name = "gridStatus", EmitDefaultValue = false)]
+        [DataMember(Name = "gridStatus", EmitDefaultValue = true)]
         public GridStatusEnum? GridStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="View" /> class.
@@ -133,31 +133,31 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Columns
         /// </summary>
-        [DataMember(Name = "columns", EmitDefaultValue = false)]
+        [DataMember(Name = "columns", EmitDefaultValue = true)]
         public List<ViewColumn> Columns { get; set; }
 
         /// <summary>
         /// Gets or Sets GridId
         /// </summary>
-        [DataMember(Name = "gridId", EmitDefaultValue = false)]
+        [DataMember(Name = "gridId", EmitDefaultValue = true)]
         public string GridId { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets Records
         /// </summary>
-        [DataMember(Name = "records", EmitDefaultValue = false)]
+        [DataMember(Name = "records", EmitDefaultValue = true)]
         public List<Record> Records { get; set; }
 
         /// <summary>

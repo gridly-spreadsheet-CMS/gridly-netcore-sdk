@@ -55,7 +55,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", EmitDefaultValue = true)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="NumberFormat" /> class.
@@ -75,13 +75,13 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets DecimalPlaces
         /// </summary>
-        [DataMember(Name = "decimalPlaces", EmitDefaultValue = false)]
+        [DataMember(Name = "decimalPlaces", EmitDefaultValue = true)]
         public int DecimalPlaces { get; set; }
 
         /// <summary>
         /// Gets or Sets CurrencySymbol
         /// </summary>
-        [DataMember(Name = "currencySymbol", EmitDefaultValue = false)]
+        [DataMember(Name = "currencySymbol", EmitDefaultValue = true)]
         public string CurrencySymbol { get; set; }
 
         /// <summary>

@@ -55,7 +55,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets RecordIdentifierType
         /// </summary>
-        [DataMember(Name = "recordIdentifierType", EmitDefaultValue = false)]
+        [DataMember(Name = "recordIdentifierType", EmitDefaultValue = true)]
         public RecordIdentifierTypeEnum? RecordIdentifierType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateGrid" /> class.
@@ -85,19 +85,19 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
         /// Gets or Sets TemplateGridId
         /// </summary>
-        [DataMember(Name = "templateGridId", EmitDefaultValue = false)]
+        [DataMember(Name = "templateGridId", EmitDefaultValue = true)]
         public string TemplateGridId { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = true)]
         public Dictionary<string, string> Metadata { get; set; }
 
         /// <summary>

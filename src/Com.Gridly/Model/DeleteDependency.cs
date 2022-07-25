@@ -43,7 +43,7 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Ids
         /// </summary>
-        [DataMember(Name = "ids", EmitDefaultValue = false)]
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
         public List<string> Ids { get; set; }
 
         /// <summary>

@@ -51,31 +51,31 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Cells
         /// </summary>
-        [DataMember(Name = "cells", EmitDefaultValue = false)]
+        [DataMember(Name = "cells", EmitDefaultValue = true)]
         public List<Cell> Cells { get; set; }
 
         /// <summary>
         /// Gets or Sets LastModifiedBy
         /// </summary>
-        [DataMember(Name = "lastModifiedBy", EmitDefaultValue = false)]
+        [DataMember(Name = "lastModifiedBy", EmitDefaultValue = true)]
         public string LastModifiedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets LastModifiedTime
         /// </summary>
-        [DataMember(Name = "lastModifiedTime", EmitDefaultValue = false)]
+        [DataMember(Name = "lastModifiedTime", EmitDefaultValue = true)]
         public DateTime LastModifiedTime { get; set; }
 
         /// <summary>
         /// Gets or Sets Path
         /// </summary>
-        [DataMember(Name = "path", EmitDefaultValue = false)]
+        [DataMember(Name = "path", EmitDefaultValue = true)]
         public string Path { get; set; }
 
         /// <summary>

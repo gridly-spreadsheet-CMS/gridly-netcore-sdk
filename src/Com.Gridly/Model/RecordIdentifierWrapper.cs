@@ -60,13 +60,13 @@ namespace Com.Gridly.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Path
         /// </summary>
-        [DataMember(Name = "path", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "path", IsRequired = true, EmitDefaultValue = true)]
         public string Path { get; set; }
 
         /// <summary>
