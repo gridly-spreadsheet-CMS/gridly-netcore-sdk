@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Grid** | [**ReferencedGrid**](ReferencedGrid.md) |  | [optional] 
 **Column** | [**ReferencedColumn**](ReferencedColumn.md) |  | [optional] 
+**Branch** | [**ReferencedGrid**](ReferencedGrid.md) |  | [optional] 
 **Type** | **string** |  | [optional] 
 **SelectionType** | **string** |  | [optional] 
 

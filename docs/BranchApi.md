@@ -2,14 +2,13 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](BranchApi.md#create) | **POST** /v1/branches | create
-[**Delete**](BranchApi.md#delete) | **DELETE** /v1/branches/{branchId} | delete
-[**Get**](BranchApi.md#get) | **GET** /v1/branches/{branchId} | get
-[**List**](BranchApi.md#list) | **GET** /v1/branches | list
-[**Merge**](BranchApi.md#merge) | **POST** /v1/branches/{branchId}/merge | merge
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](BranchApi.md#create) | **POST** /v1/branches | create |
+| [**Delete**](BranchApi.md#delete) | **DELETE** /v1/branches/{branchId} | delete |
+| [**Get**](BranchApi.md#get) | **GET** /v1/branches/{branchId} | get |
+| [**List**](BranchApi.md#list) | **GET** /v1/branches | list |
+| [**Merge**](BranchApi.md#merge) | **POST** /v1/branches/{branchId}/merge | merge |
 
 <a name="create"></a>
 # **Create**
@@ -53,8 +52,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BranchApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling BranchApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -62,13 +61,33 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<Branch> response = apiInstance.CreateWithHttpInfo(createBranch, gridId, branchId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BranchApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createBranch** | [**CreateBranch**](CreateBranch.md)|  | 
- **gridId** | **string**| gridId | [optional] 
- **branchId** | **string**| branchId | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createBranch** | [**CreateBranch**](CreateBranch.md) |  |  |
+| **gridId** | **string** | gridId | [optional]  |
+| **branchId** | **string** | branchId | [optional]  |
 
 ### Return type
 
@@ -130,8 +149,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BranchApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling BranchApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -139,11 +158,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(branchId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BranchApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **branchId** | **string**| branchId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **branchId** | **string** | branchId |  |
 
 ### Return type
 
@@ -206,8 +242,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BranchApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling BranchApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -215,11 +251,31 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<Branch> response = apiInstance.GetWithHttpInfo(branchId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BranchApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **branchId** | **string**| branchId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **branchId** | **string** | branchId |  |
 
 ### Return type
 
@@ -282,8 +338,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BranchApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling BranchApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -291,11 +347,31 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<Branch>> response = apiInstance.ListWithHttpInfo(gridId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BranchApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gridId** | **string**| gridId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **gridId** | **string** | gridId |  |
 
 ### Return type
 
@@ -360,8 +436,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling BranchApi.Merge: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling BranchApi.Merge: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -369,13 +445,33 @@ namespace Example
 }
 ```
 
+#### Using the MergeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // merge
+    ApiResponse<Task> response = apiInstance.MergeWithHttpInfo(branchId, destinationBranchId, mergeRecordOptions);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling BranchApi.MergeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **branchId** | **string**| branchId | 
- **destinationBranchId** | **string**| destinationBranchId | 
- **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **branchId** | **string** | branchId |  |
+| **destinationBranchId** | **string** | destinationBranchId |  |
+| **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
 

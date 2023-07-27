@@ -2,15 +2,14 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](GridApi.md#create) | **POST** /v1/grids | create
-[**Delete**](GridApi.md#delete) | **DELETE** /v1/grids/{gridId} | delete
-[**Get**](GridApi.md#get) | **GET** /v1/grids/{gridId} | get
-[**List**](GridApi.md#list) | **GET** /v1/grids | list
-[**ListTemplateGrids**](GridApi.md#listtemplategrids) | **GET** /v1/template-grids | listTemplateGrids
-[**Update**](GridApi.md#update) | **PATCH** /v1/grids/{gridId} | update
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](GridApi.md#create) | **POST** /v1/grids | create |
+| [**Delete**](GridApi.md#delete) | **DELETE** /v1/grids/{gridId} | delete |
+| [**Get**](GridApi.md#get) | **GET** /v1/grids/{gridId} | get |
+| [**List**](GridApi.md#list) | **GET** /v1/grids | list |
+| [**ListTemplateGrids**](GridApi.md#listtemplategrids) | **GET** /v1/template-grids | listTemplateGrids |
+| [**Update**](GridApi.md#update) | **PATCH** /v1/grids/{gridId} | update |
 
 <a name="create"></a>
 # **Create**
@@ -53,8 +52,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GridApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GridApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -62,12 +61,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<Grid> response = apiInstance.CreateWithHttpInfo(dbId, createGrid);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GridApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
- **createGrid** | [**CreateGrid**](CreateGrid.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
+| **createGrid** | [**CreateGrid**](CreateGrid.md) |  |  |
 
 ### Return type
 
@@ -129,8 +148,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GridApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GridApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -138,11 +157,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(gridId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GridApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gridId** | **string**| gridId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **gridId** | **string** | gridId |  |
 
 ### Return type
 
@@ -205,8 +241,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GridApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GridApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -214,11 +250,31 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<Grid> response = apiInstance.GetWithHttpInfo(gridId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GridApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gridId** | **string**| gridId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **gridId** | **string** | gridId |  |
 
 ### Return type
 
@@ -281,8 +337,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GridApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GridApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -290,11 +346,31 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<Grid>> response = apiInstance.ListWithHttpInfo(dbId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GridApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
 
 ### Return type
 
@@ -356,8 +432,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GridApi.ListTemplateGrids: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GridApi.ListTemplateGrids: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -365,9 +441,28 @@ namespace Example
 }
 ```
 
+#### Using the ListTemplateGridsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // listTemplateGrids
+    ApiResponse<List<Grid>> response = apiInstance.ListTemplateGridsWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GridApi.ListTemplateGridsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**List&lt;Grid&gt;**](Grid.md)
@@ -430,8 +525,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling GridApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling GridApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -439,12 +534,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<Grid> response = apiInstance.UpdateWithHttpInfo(gridId, updateGrid);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling GridApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gridId** | **string**| gridId | 
- **updateGrid** | [**UpdateGrid**](UpdateGrid.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **gridId** | **string** | gridId |  |
+| **updateGrid** | [**UpdateGrid**](UpdateGrid.md) |  |  |
 
 ### Return type
 

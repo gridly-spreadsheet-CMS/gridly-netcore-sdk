@@ -2,15 +2,14 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](ViewApi.md#create) | **POST** /v1/views | create
-[**Export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export
-[**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get
-[**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView
-[**List**](ViewApi.md#list) | **GET** /v1/views | list
-[**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](ViewApi.md#create) | **POST** /v1/views | create |
+| [**Export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export |
+| [**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get |
+| [**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView |
+| [**List**](ViewApi.md#list) | **GET** /v1/views | list |
+| [**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge |
 
 <a name="create"></a>
 # **Create**
@@ -52,8 +51,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -61,11 +60,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<View> response = apiInstance.CreateWithHttpInfo(createView);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createView** | [**CreateView**](CreateView.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createView** | [**CreateView**](CreateView.md) |  |  |
 
 ### Return type
 
@@ -133,8 +152,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Export: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Export: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -142,16 +161,36 @@ namespace Example
 }
 ```
 
+#### Using the ExportWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // export
+    ApiResponse<System.IO.Stream> response = apiInstance.ExportWithHttpInfo(viewId, columnIds, fileHeader, query, sort, type);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.ExportWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
- **fileHeader** | **ExportFileHeader?**| fileHeader | [optional] 
- **query** | **string**| query | [optional] [default to &quot;{}&quot;]
- **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
- **type** | **string**| type | [optional] [default to csv]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnIds** | [**List&lt;string&gt;**](string.md) | columnIds | [optional]  |
+| **fileHeader** | **ExportFileHeader?** | fileHeader | [optional]  |
+| **query** | **string** | query | [optional] [default to &quot;{}&quot;] |
+| **sort** | **string** | sort | [optional] [default to &quot;{}&quot;] |
+| **type** | **string** | type | [optional] [default to csv] |
 
 ### Return type
 
@@ -219,8 +258,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -228,16 +267,36 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<View> response = apiInstance.GetWithHttpInfo(viewId, columnIds, include, page, query, sort);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnIds** | [**List&lt;string&gt;**](string.md)| columnIds | [optional] 
- **include** | [**List&lt;string&gt;**](string.md)| include | [optional] 
- **page** | **string**| page | [optional] [default to &quot;{}&quot;]
- **query** | **string**| query | [optional] [default to &quot;{}&quot;]
- **sort** | **string**| sort | [optional] [default to &quot;{}&quot;]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnIds** | [**List&lt;string&gt;**](string.md) | columnIds | [optional]  |
+| **include** | [**List&lt;string&gt;**](string.md) | include | [optional]  |
+| **page** | **string** | page | [optional] [default to &quot;{}&quot;] |
+| **query** | **string** | query | [optional] [default to &quot;{}&quot;] |
+| **sort** | **string** | sort | [optional] [default to &quot;{}&quot;] |
 
 ### Return type
 
@@ -302,8 +361,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.ImportView: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.ImportView: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -311,14 +370,31 @@ namespace Example
 }
 ```
 
+#### Using the ImportViewWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // importView
+    apiInstance.ImportViewWithHttpInfo(viewId, file, importRequest, type);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.ImportViewWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **file** | **System.IO.Stream****System.IO.Stream**| The following file types are supported: csv, tsv, xls, xlsx and json | 
- **importRequest** | **string**| importRequest | [optional] [default to &quot;{}&quot;]
- **type** | **string**| type | [optional] [default to csv]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **file** | **System.IO.Stream****System.IO.Stream** | The following file types are supported: csv, tsv, xls, xlsx and json |  |
+| **importRequest** | **string** | importRequest | [optional] [default to &quot;{}&quot;] |
+| **type** | **string** | type | [optional] [default to csv] |
 
 ### Return type
 
@@ -383,8 +459,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -392,13 +468,33 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<View>> response = apiInstance.ListWithHttpInfo(branchId, gridId, type);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **branchId** | **string**| branchId | [optional] 
- **gridId** | **string**| gridId | [optional] 
- **type** | **string**| type | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **branchId** | **string** | branchId | [optional]  |
+| **gridId** | **string** | gridId | [optional]  |
+| **type** | **string** | type | [optional]  |
 
 ### Return type
 
@@ -463,8 +559,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewApi.Merge: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewApi.Merge: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -472,13 +568,33 @@ namespace Example
 }
 ```
 
+#### Using the MergeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // merge
+    ApiResponse<Task> response = apiInstance.MergeWithHttpInfo(destinationViewId, viewId, mergeRecordOptions);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.MergeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **destinationViewId** | **string**| destinationViewId | 
- **viewId** | **string**| viewId | 
- **mergeRecordOptions** | [**List&lt;string&gt;**](string.md)| mergeRecordOptions | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **destinationViewId** | **string** | destinationViewId |  |
+| **viewId** | **string** | viewId |  |
+| **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
 

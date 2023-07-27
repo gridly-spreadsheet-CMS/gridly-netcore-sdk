@@ -2,15 +2,14 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](DatabaseApi.md#create) | **POST** /v1/databases | create
-[**Delete**](DatabaseApi.md#delete) | **DELETE** /v1/databases/{dbId} | delete
-[**Duplicate**](DatabaseApi.md#duplicate) | **POST** /v1/databases/{dbId}/duplicate | duplicate
-[**Get**](DatabaseApi.md#get) | **GET** /v1/databases/{dbId} | get
-[**List**](DatabaseApi.md#list) | **GET** /v1/databases | list
-[**Update**](DatabaseApi.md#update) | **PUT** /v1/databases/{dbId} | update
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](DatabaseApi.md#create) | **POST** /v1/databases | create |
+| [**Delete**](DatabaseApi.md#delete) | **DELETE** /v1/databases/{dbId} | delete |
+| [**Duplicate**](DatabaseApi.md#duplicate) | **POST** /v1/databases/{dbId}/duplicate | duplicate |
+| [**Get**](DatabaseApi.md#get) | **GET** /v1/databases/{dbId} | get |
+| [**List**](DatabaseApi.md#list) | **GET** /v1/databases | list |
+| [**Update**](DatabaseApi.md#update) | **PUT** /v1/databases/{dbId} | update |
 
 <a name="create"></a>
 # **Create**
@@ -51,8 +50,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -60,12 +59,32 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<Database> response = apiInstance.CreateWithHttpInfo(projectId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
- **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
+| **body** | [**CreateDatabase**](CreateDatabase.md) | body |  |
 
 ### Return type
 
@@ -125,8 +144,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -134,11 +153,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(dbId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
 
 ### Return type
 
@@ -201,8 +237,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Duplicate: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Duplicate: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -210,13 +246,33 @@ namespace Example
 }
 ```
 
+#### Using the DuplicateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // duplicate
+    ApiResponse<Database> response = apiInstance.DuplicateWithHttpInfo(dbId, projectId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.DuplicateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
- **projectId** | **long**| projectId | 
- **body** | [**CreateDatabase**](CreateDatabase.md)| body | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
+| **projectId** | **long** | projectId |  |
+| **body** | [**CreateDatabase**](CreateDatabase.md) | body |  |
 
 ### Return type
 
@@ -277,8 +333,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -286,11 +342,31 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<Database> response = apiInstance.GetWithHttpInfo(dbId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
 
 ### Return type
 
@@ -355,8 +431,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -364,15 +440,35 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<Database>> response = apiInstance.ListWithHttpInfo(expand, page, projectId, search, sort);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **expand** | [**List&lt;string&gt;**](string.md)| expand | [optional] 
- **page** | **string**| page | [optional] [default to &quot;&quot;]
- **projectId** | **long?**| projectId | [optional] 
- **search** | **string**| search | [optional] 
- **sort** | **string**| sort | [optional] [default to &quot;&quot;]
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **expand** | [**List&lt;string&gt;**](string.md) | expand | [optional]  |
+| **page** | **string** | page | [optional] [default to &quot;&quot;] |
+| **projectId** | **long?** | projectId | [optional]  |
+| **search** | **string** | search | [optional]  |
+| **sort** | **string** | sort | [optional] [default to &quot;&quot;] |
 
 ### Return type
 
@@ -434,8 +530,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling DatabaseApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling DatabaseApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -443,12 +539,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<Database> response = apiInstance.UpdateWithHttpInfo(dbId, body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DatabaseApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dbId** | **string**| dbId | 
- **body** | [**UpdateDatabase**](UpdateDatabase.md)| body | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **dbId** | **string** | dbId |  |
+| **body** | [**UpdateDatabase**](UpdateDatabase.md) | body |  |
 
 ### Return type
 

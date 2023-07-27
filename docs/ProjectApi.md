@@ -2,14 +2,13 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Create**](ProjectApi.md#create) | **POST** /v1/projects | create
-[**Delete**](ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete
-[**FindOne**](ProjectApi.md#findone) | **GET** /v1/projects/{projectId} | findOne
-[**List**](ProjectApi.md#list) | **GET** /v1/projects | list
-[**Update**](ProjectApi.md#update) | **PUT** /v1/projects/{projectId} | update
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Create**](ProjectApi.md#create) | **POST** /v1/projects | create |
+| [**Delete**](ProjectApi.md#delete) | **DELETE** /v1/projects/{projectId} | delete |
+| [**FindOne**](ProjectApi.md#findone) | **GET** /v1/projects/{projectId} | findOne |
+| [**List**](ProjectApi.md#list) | **GET** /v1/projects | list |
+| [**Update**](ProjectApi.md#update) | **PUT** /v1/projects/{projectId} | update |
 
 <a name="create"></a>
 # **Create**
@@ -49,8 +48,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.Create: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.Create: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -58,11 +57,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // create
+    ApiResponse<Project> response = apiInstance.CreateWithHttpInfo(createProject);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.CreateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createProject** | [**CreateProject**](CreateProject.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createProject** | [**CreateProject**](CreateProject.md) |  |  |
 
 ### Return type
 
@@ -122,8 +141,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -131,11 +150,28 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(projectId);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
 
 ### Return type
 
@@ -196,8 +232,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.FindOne: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.FindOne: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -205,11 +241,31 @@ namespace Example
 }
 ```
 
+#### Using the FindOneWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // findOne
+    ApiResponse<ProjectDetail> response = apiInstance.FindOneWithHttpInfo(projectId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.FindOneWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
 
 ### Return type
 
@@ -269,8 +325,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.List: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.List: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -278,9 +334,28 @@ namespace Example
 }
 ```
 
+#### Using the ListWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // list
+    ApiResponse<List<Project>> response = apiInstance.ListWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.ListWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**List&lt;Project&gt;**](Project.md)
@@ -341,8 +416,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ProjectApi.Update: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ProjectApi.Update: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -350,12 +425,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // update
+    ApiResponse<Project> response = apiInstance.UpdateWithHttpInfo(projectId, updateProject);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectApi.UpdateWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **projectId** | **long**| projectId | 
- **updateProject** | [**UpdateProject**](UpdateProject.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **long** | projectId |  |
+| **updateProject** | [**UpdateProject**](UpdateProject.md) |  |  |
 
 ### Return type
 

@@ -2,10 +2,9 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Get**](TaskApi.md#get) | **GET** /v1/tasks/{taskId} | get
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Get**](TaskApi.md#get) | **GET** /v1/tasks/{taskId} | get |
 
 <a name="get"></a>
 # **Get**
@@ -47,8 +46,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling TaskApi.Get: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling TaskApi.Get: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -56,11 +55,31 @@ namespace Example
 }
 ```
 
+#### Using the GetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get
+    ApiResponse<Task> response = apiInstance.GetWithHttpInfo(taskId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TaskApi.GetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **taskId** | **string**| taskId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **taskId** | **string** | taskId |  |
 
 ### Return type
 

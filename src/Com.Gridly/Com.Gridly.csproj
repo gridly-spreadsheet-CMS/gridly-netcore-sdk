@@ -9,10 +9,10 @@
     <Authors>LocalizeDirect AB</Authors>
     <Company>LocalizeDirect AB</Company>
     <AssemblyTitle>Gridly SDK</AssemblyTitle>
-    <Description>Gridly NetCore SDK 1.2.8</Description>
-    <Copyright>Copyright @ 2022 LocalizeDirect AB</Copyright>
+    <Description>Gridly NetCore SDK 1.2.10</Description>
+    <Copyright>Copyright @ 2023 LocalizeDirect AB</Copyright>
     <RootNamespace>Com.Gridly</RootNamespace>
-    <Version>1.2.8</Version>
+    <Version>1.2.10</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Com.Gridly.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -20,11 +20,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="1.8.0" />
+    <PackageReference Include="JsonSubTypes" Version="1.9.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="RestSharp" Version="106.13.0" />
+    <PackageReference Include="RestSharp" Version="108.0.1" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
 </Project>

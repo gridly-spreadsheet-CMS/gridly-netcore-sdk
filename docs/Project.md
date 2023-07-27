@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **long** |  | [optional] 
+**CompanyId** | **long** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
 **Role** | [**Role**](Role.md) |  | [optional] 

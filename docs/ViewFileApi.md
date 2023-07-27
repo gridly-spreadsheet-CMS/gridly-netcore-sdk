@@ -2,13 +2,12 @@
 
 All URIs are relative to *https://api.gridly.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**Delete**](ViewFileApi.md#delete) | **DELETE** /v1/views/{viewId}/files | delete
-[**Download**](ViewFileApi.md#download) | **GET** /v1/views/{viewId}/files/{fileId} | download
-[**Upload**](ViewFileApi.md#upload) | **POST** /v1/views/{viewId}/files | upload
-[**UploadZip**](ViewFileApi.md#uploadzip) | **POST** /v1/views/{viewId}/files/zip | uploadZip
-
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**Delete**](ViewFileApi.md#delete) | **DELETE** /v1/views/{viewId}/files | delete |
+| [**Download**](ViewFileApi.md#download) | **GET** /v1/views/{viewId}/files/{fileId} | download |
+| [**Upload**](ViewFileApi.md#upload) | **POST** /v1/views/{viewId}/files | upload |
+| [**UploadZip**](ViewFileApi.md#uploadzip) | **POST** /v1/views/{viewId}/files/zip | uploadZip |
 
 <a name="delete"></a>
 # **Delete**
@@ -52,8 +51,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.Delete: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.Delete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -61,14 +60,31 @@ namespace Example
 }
 ```
 
+#### Using the DeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // delete
+    apiInstance.DeleteWithHttpInfo(columnId, recordId, viewId, deleteFile);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.DeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **columnId** | **string**| columnId | 
- **recordId** | **string**| recordId | 
- **viewId** | **string**| viewId | 
- **deleteFile** | [**DeleteFile**](DeleteFile.md)|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **columnId** | **string** | columnId |  |
+| **recordId** | **string** | recordId |  |
+| **viewId** | **string** | viewId |  |
+| **deleteFile** | [**DeleteFile**](DeleteFile.md) |  |  |
 
 ### Return type
 
@@ -132,8 +148,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.Download: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.Download: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -141,12 +157,32 @@ namespace Example
 }
 ```
 
+#### Using the DownloadWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // download
+    ApiResponse<System.IO.Stream> response = apiInstance.DownloadWithHttpInfo(fileId, viewId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.DownloadWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fileId** | **string**| fileId | 
- **viewId** | **string**| viewId | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **fileId** | **string** | fileId |  |
+| **viewId** | **string** | viewId |  |
 
 ### Return type
 
@@ -212,8 +248,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.Upload: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.Upload: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -221,14 +257,34 @@ namespace Example
 }
 ```
 
+#### Using the UploadWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // upload
+    ApiResponse<UploadedFile> response = apiInstance.UploadWithHttpInfo(viewId, columnId, recordId, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.UploadWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnId** | **string**| columnId | 
- **recordId** | **string**| recordId | 
- **file** | **System.IO.Stream****System.IO.Stream**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnId** | **string** | columnId |  |
+| **recordId** | **string** | recordId |  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  |  |
 
 ### Return type
 
@@ -294,8 +350,8 @@ namespace Example
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling ViewFileApi.UploadZip: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling ViewFileApi.UploadZip: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -303,14 +359,34 @@ namespace Example
 }
 ```
 
+#### Using the UploadZipWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // uploadZip
+    ApiResponse<List<Record>> response = apiInstance.UploadZipWithHttpInfo(viewId, columnId, fileMappings, file);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewFileApi.UploadZipWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **viewId** | **string**| viewId | 
- **columnId** | **string**|  | 
- **fileMappings** | **string**|  | 
- **file** | **System.IO.Stream****System.IO.Stream**|  | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnId** | **string** |  |  |
+| **fileMappings** | **string** |  |  |
+| **file** | **System.IO.Stream****System.IO.Stream** |  |  |
 
 ### Return type
 
