@@ -7,6 +7,7 @@ All URIs are relative to *https://api.gridly.com*
 | [**Create**](ViewApi.md#create) | **POST** /v1/views | create |
 | [**Export**](ViewApi.md#export) | **GET** /v1/views/{viewId}/export | export |
 | [**Get**](ViewApi.md#get) | **GET** /v1/views/{viewId} | get |
+| [**GetStatistic**](ViewApi.md#getstatistic) | **GET** /v1/views/{viewId}/statistic | getStatistic |
 | [**ImportView**](ViewApi.md#importview) | **POST** /v1/views/{viewId}/import | importView |
 | [**List**](ViewApi.md#list) | **GET** /v1/views | list |
 | [**Merge**](ViewApi.md#merge) | **POST** /v1/views/{viewId}/merge | merge |
@@ -301,6 +302,104 @@ catch (ApiException e)
 ### Return type
 
 [**View**](View.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getstatistic"></a>
+# **GetStatistic**
+> ViewStatistic GetStatistic (string viewId, List<string> columnIds = null)
+
+getStatistic
+
+getStatistic
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Com.Gridly.Api;
+using Com.Gridly.Client;
+using Com.Gridly.Model;
+
+namespace Example
+{
+    public class GetStatisticExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.gridly.com";
+            // Configure API key authorization: ApiKey
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ViewApi(config);
+            var viewId = "viewId_example";  // string | viewId
+            var columnIds = new List<string>(); // List<string> | columnIds (optional) 
+
+            try
+            {
+                // getStatistic
+                ViewStatistic result = apiInstance.GetStatistic(viewId, columnIds);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ViewApi.GetStatistic: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetStatisticWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // getStatistic
+    ApiResponse<ViewStatistic> response = apiInstance.GetStatisticWithHttpInfo(viewId, columnIds);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ViewApi.GetStatisticWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **viewId** | **string** | viewId |  |
+| **columnIds** | [**List&lt;string&gt;**](string.md) | columnIds | [optional]  |
+
+### Return type
+
+[**ViewStatistic**](ViewStatistic.md)
 
 ### Authorization
 

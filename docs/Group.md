@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **Name** | **string** |  | [optional] 
 **LogoUrl** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
+**ShareType** | **string** |  | [optional] 
+**CreatedDate** | **DateTime** |  | [optional] 
+**LastModifiedDate** | **DateTime** |  | [optional] 
 **IsSystemGroup** | **bool** |  | [optional] 
 **SystemGroup** | **bool** |  | [optional] 
 

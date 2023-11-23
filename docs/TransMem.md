@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IsDisabled** | **bool** |  | [optional] 
 **IsPausedConsuming** | **bool** |  | [optional] 
 **PopulateTranslationStatus** | **TranslationStatus** |  | [optional] 
+**ContextLookup** | **bool** |  | [optional] 
 **Name** | **string** |  | 
 **Description** | **string** |  | [optional] 
 **FuzzyMatch** | **bool** |  | [optional] 

@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **Reference** | [**Reference**](Reference.md) |  | [optional] 
 **Formula** | [**Formula**](Formula.md) |  | [optional] 
 **DateTimeFormat** | [**DateTimeFormat**](DateTimeFormat.md) |  | [optional] 
+**Viewable** | **bool** |  | [optional] 
+**Editable** | **bool** |  | [optional] 
 **NewId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
