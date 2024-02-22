@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DateFormat** | [**DateFormat**](DateFormat.md) |  | [optional] 
+**DateFormat** | **string** |  | [optional] 
 **TimeFormat** | **string** |  | [optional] 
 **ZoneOffset** | **string** |  | [optional] 
 **ShowTimeZone** | **bool** |  | [optional] 

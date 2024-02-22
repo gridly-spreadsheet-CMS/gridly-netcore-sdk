@@ -5,6 +5,8 @@ appveyor.yml
 docs/AddViewColumn.md
 docs/Branch.md
 docs/BranchApi.md
+docs/BranchDiffCell.md
+docs/BranchDiffRecord.md
 docs/Cell.md
 docs/CellHistory.md
 docs/ColumnReference.md
@@ -22,7 +24,6 @@ docs/CreateTransMem.md
 docs/CreateView.md
 docs/Database.md
 docs/DatabaseApi.md
-docs/DateFormat.md
 docs/DateTimeFormat.md
 docs/DeleteDependency.md
 docs/DeleteFile.md
@@ -134,6 +135,8 @@ src/Com.Gridly/Com.Gridly.csproj
 src/Com.Gridly/Model/AbstractOpenAPISchema.cs
 src/Com.Gridly/Model/AddViewColumn.cs
 src/Com.Gridly/Model/Branch.cs
+src/Com.Gridly/Model/BranchDiffCell.cs
+src/Com.Gridly/Model/BranchDiffRecord.cs
 src/Com.Gridly/Model/Cell.cs
 src/Com.Gridly/Model/CellHistory.cs
 src/Com.Gridly/Model/ColumnReference.cs
@@ -150,7 +153,6 @@ src/Com.Gridly/Model/CreateShareView.cs
 src/Com.Gridly/Model/CreateTransMem.cs
 src/Com.Gridly/Model/CreateView.cs
 src/Com.Gridly/Model/Database.cs
-src/Com.Gridly/Model/DateFormat.cs
 src/Com.Gridly/Model/DateTimeFormat.cs
 src/Com.Gridly/Model/DeleteDependency.cs
 src/Com.Gridly/Model/DeleteFile.cs

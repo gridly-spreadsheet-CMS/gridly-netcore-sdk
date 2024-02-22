@@ -9,10 +9,10 @@
     <Authors>LocalizeDirect AB</Authors>
     <Company>LocalizeDirect AB</Company>
     <AssemblyTitle>Gridly SDK</AssemblyTitle>
-    <Description>Gridly NetCore SDK 1.2.10</Description>
-    <Copyright>Copyright @ 2023 LocalizeDirect AB</Copyright>
+    <Description>Gridly NetCore SDK 1.2.11</Description>
+    <Copyright>Copyright @ 2024 LocalizeDirect AB</Copyright>
     <RootNamespace>Com.Gridly</RootNamespace>
-    <Version>1.2.10</Version>
+    <Version>1.2.11</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Com.Gridly.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

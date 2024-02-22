@@ -27,26 +27,84 @@ using OpenAPIDateConverter = Com.Gridly.Client.OpenAPIDateConverter;
 namespace Com.Gridly.Model
 {
     /// <summary>
-    /// Record
+    /// BranchDiffRecord
     /// </summary>
-    [DataContract(Name = "Record")]
-    public partial class Record : IEquatable<Record>, IValidatableObject
+    [DataContract(Name = "BranchDiffRecord")]
+    public partial class BranchDiffRecord : IEquatable<BranchDiffRecord>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Record" /> class.
+        /// Defines Status
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            /// <summary>
+            /// Enum Added for value: added
+            /// </summary>
+            [EnumMember(Value = "added")]
+            Added = 1,
+
+            /// <summary>
+            /// Enum Updated for value: updated
+            /// </summary>
+            [EnumMember(Value = "updated")]
+            Updated = 2,
+
+            /// <summary>
+            /// Enum Deleted for value: deleted
+            /// </summary>
+            [EnumMember(Value = "deleted")]
+            Deleted = 3,
+
+            /// <summary>
+            /// Enum Duplicated for value: duplicated
+            /// </summary>
+            [EnumMember(Value = "duplicated")]
+            Duplicated = 4,
+
+            /// <summary>
+            /// Enum ExceededLengthId for value: exceededLengthId
+            /// </summary>
+            [EnumMember(Value = "exceededLengthId")]
+            ExceededLengthId = 5,
+
+            /// <summary>
+            /// Enum Merged for value: merged
+            /// </summary>
+            [EnumMember(Value = "merged")]
+            Merged = 6,
+
+            /// <summary>
+            /// Enum IdentifierUpdated for value: identifierUpdated
+            /// </summary>
+            [EnumMember(Value = "identifierUpdated")]
+            IdentifierUpdated = 7
+
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name = "status", EmitDefaultValue = true)]
+        public StatusEnum? Status { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchDiffRecord" /> class.
         /// </summary>
         /// <param name="id">id.</param>
+        /// <param name="path">path.</param>
+        /// <param name="status">status.</param>
         /// <param name="cells">cells.</param>
         /// <param name="lastModifiedBy">lastModifiedBy.</param>
         /// <param name="lastModifiedTime">lastModifiedTime.</param>
-        /// <param name="path">path.</param>
-        public Record(string id = default(string), List<Cell> cells = default(List<Cell>), string lastModifiedBy = default(string), DateTime lastModifiedTime = default(DateTime), string path = default(string))
+        public BranchDiffRecord(string id = default(string), string path = default(string), StatusEnum? status = default(StatusEnum?), List<BranchDiffCell> cells = default(List<BranchDiffCell>), string lastModifiedBy = default(string), DateTime lastModifiedTime = default(DateTime))
         {
             this.Id = id;
+            this.Path = path;
+            this.Status = status;
             this.Cells = cells;
             this.LastModifiedBy = lastModifiedBy;
             this.LastModifiedTime = lastModifiedTime;
-            this.Path = path;
         }
 
         /// <summary>
@@ -56,10 +114,16 @@ namespace Com.Gridly.Model
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets Path
+        /// </summary>
+        [DataMember(Name = "path", EmitDefaultValue = true)]
+        public string Path { get; set; }
+
+        /// <summary>
         /// Gets or Sets Cells
         /// </summary>
         [DataMember(Name = "cells", EmitDefaultValue = true)]
-        public List<Cell> Cells { get; set; }
+        public List<BranchDiffCell> Cells { get; set; }
 
         /// <summary>
         /// Gets or Sets LastModifiedBy
@@ -74,24 +138,19 @@ namespace Com.Gridly.Model
         public DateTime LastModifiedTime { get; set; }
 
         /// <summary>
-        /// Gets or Sets Path
-        /// </summary>
-        [DataMember(Name = "path", EmitDefaultValue = true)]
-        public string Path { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Record {\n");
+            sb.Append("class BranchDiffRecord {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Path: ").Append(Path).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Cells: ").Append(Cells).Append("\n");
             sb.Append("  LastModifiedBy: ").Append(LastModifiedBy).Append("\n");
             sb.Append("  LastModifiedTime: ").Append(LastModifiedTime).Append("\n");
-            sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,15 +171,15 @@ namespace Com.Gridly.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Record);
+            return this.Equals(input as BranchDiffRecord);
         }
 
         /// <summary>
-        /// Returns true if Record instances are equal
+        /// Returns true if BranchDiffRecord instances are equal
         /// </summary>
-        /// <param name="input">Instance of Record to be compared</param>
+        /// <param name="input">Instance of BranchDiffRecord to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Record input)
+        public bool Equals(BranchDiffRecord input)
         {
             if (input == null)
             {
@@ -131,6 +190,15 @@ namespace Com.Gridly.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Path == input.Path ||
+                    (this.Path != null &&
+                    this.Path.Equals(input.Path))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
                 ) && 
                 (
                     this.Cells == input.Cells ||
@@ -147,11 +215,6 @@ namespace Com.Gridly.Model
                     this.LastModifiedTime == input.LastModifiedTime ||
                     (this.LastModifiedTime != null &&
                     this.LastModifiedTime.Equals(input.LastModifiedTime))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
                 );
         }
 
@@ -168,6 +231,11 @@ namespace Com.Gridly.Model
                 {
                     hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
+                if (this.Path != null)
+                {
+                    hashCode = (hashCode * 59) + this.Path.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 if (this.Cells != null)
                 {
                     hashCode = (hashCode * 59) + this.Cells.GetHashCode();
@@ -179,10 +247,6 @@ namespace Com.Gridly.Model
                 if (this.LastModifiedTime != null)
                 {
                     hashCode = (hashCode * 59) + this.LastModifiedTime.GetHashCode();
-                }
-                if (this.Path != null)
-                {
-                    hashCode = (hashCode * 59) + this.Path.GetHashCode();
                 }
                 return hashCode;
             }
