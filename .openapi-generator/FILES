@@ -33,7 +33,6 @@ docs/DeleteRecord.md
 docs/Dependency.md
 docs/ExportFileHeader.md
 docs/ExportFormat.md
-docs/ExportFormat1.md
 docs/FetchFileOption.md
 docs/FetchRecordHistoryRequest.md
 docs/FileCategory.md
@@ -41,6 +40,8 @@ docs/FilterField.md
 docs/Formula.md
 docs/Glossary.md
 docs/GlossaryApi.md
+docs/GlossaryExportFormat.md
+docs/GlossaryProject.md
 docs/Grid.md
 docs/GridApi.md
 docs/GridSetting.md
@@ -57,8 +58,6 @@ docs/PathNode.md
 docs/PathSingle.md
 docs/Privilege.md
 docs/Project.md
-docs/Project1.md
-docs/Project2.md
 docs/ProjectApi.md
 docs/ProjectDetail.md
 docs/Record.md
@@ -177,13 +176,14 @@ src/Com.Gridly/Model/DeleteRecord.cs
 src/Com.Gridly/Model/Dependency.cs
 src/Com.Gridly/Model/ExportFileHeader.cs
 src/Com.Gridly/Model/ExportFormat.cs
-src/Com.Gridly/Model/ExportFormat1.cs
 src/Com.Gridly/Model/FetchFileOption.cs
 src/Com.Gridly/Model/FetchRecordHistoryRequest.cs
 src/Com.Gridly/Model/FileCategory.cs
 src/Com.Gridly/Model/FilterField.cs
 src/Com.Gridly/Model/Formula.cs
 src/Com.Gridly/Model/Glossary.cs
+src/Com.Gridly/Model/GlossaryExportFormat.cs
+src/Com.Gridly/Model/GlossaryProject.cs
 src/Com.Gridly/Model/Grid.cs
 src/Com.Gridly/Model/GridSetting.cs
 src/Com.Gridly/Model/Group.cs
@@ -198,8 +198,6 @@ src/Com.Gridly/Model/PathNode.cs
 src/Com.Gridly/Model/PathSingle.cs
 src/Com.Gridly/Model/Privilege.cs
 src/Com.Gridly/Model/Project.cs
-src/Com.Gridly/Model/Project1.cs
-src/Com.Gridly/Model/Project2.cs
 src/Com.Gridly/Model/ProjectDetail.cs
 src/Com.Gridly/Model/Record.cs
 src/Com.Gridly/Model/RecordHistory.cs

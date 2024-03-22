@@ -44,7 +44,7 @@ namespace Com.Gridly.Model
         /// <param name="description">description.</param>
         /// <param name="langs">langs.</param>
         /// <param name="projects">projects.</param>
-        public CreateGlossary(string name = default(string), string description = default(string), List<string> langs = default(List<string>), List<Project2> projects = default(List<Project2>))
+        public CreateGlossary(string name = default(string), string description = default(string), List<string> langs = default(List<string>), List<GlossaryProject> projects = default(List<GlossaryProject>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -79,7 +79,7 @@ namespace Com.Gridly.Model
         /// Gets or Sets Projects
         /// </summary>
         [DataMember(Name = "projects", EmitDefaultValue = true)]
-        public List<Project2> Projects { get; set; }
+        public List<GlossaryProject> Projects { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

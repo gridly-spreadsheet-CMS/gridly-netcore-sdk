@@ -198,7 +198,7 @@ void (empty response body)
 
 <a name="exportfile"></a>
 # **ExportFile**
-> void ExportFile (long id, List<string> fields = null, ExportFormat1? format = null, List<string> langs = null)
+> void ExportFile (long id, List<string> fields = null, GlossaryExportFormat? format = null, List<string> langs = null)
 
 Export a glossary
 
@@ -226,7 +226,7 @@ namespace Example
             var apiInstance = new GlossaryApi(config);
             var id = 789L;  // long | 
             var fields = new List<string>(); // List<string> |  (optional) 
-            var format = new ExportFormat1();  // ExportFormat1? |  (optional) 
+            var format = new GlossaryExportFormat();  // GlossaryExportFormat? |  (optional) 
             var langs = new List<string>(); // List<string> |  (optional) 
 
             try
@@ -268,7 +268,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **id** | **long** |  |  |
 | **fields** | [**List&lt;string&gt;**](string.md) |  | [optional]  |
-| **format** | **ExportFormat1?** |  | [optional]  |
+| **format** | **GlossaryExportFormat?** |  | [optional]  |
 | **langs** | [**List&lt;string&gt;**](string.md) |  | [optional]  |
 
 ### Return type

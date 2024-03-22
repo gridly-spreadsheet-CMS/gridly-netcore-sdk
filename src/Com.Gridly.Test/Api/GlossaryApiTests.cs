@@ -87,7 +87,7 @@ namespace Com.Gridly.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //long id = null;
             //List<string> fields = null;
-            //ExportFormat1? format = null;
+            //GlossaryExportFormat? format = null;
             //List<string> langs = null;
             //instance.ExportFile(id, fields, format, langs);
         }

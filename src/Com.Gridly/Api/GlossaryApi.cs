@@ -77,7 +77,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void ExportFile(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0);
+        void ExportFile(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0);
 
         /// <summary>
         /// Export a glossary
@@ -92,7 +92,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ExportFileWithHttpInfo(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0);
+        ApiResponse<Object> ExportFileWithHttpInfo(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0);
         /// <summary>
         /// get glossary info
         /// </summary>
@@ -250,7 +250,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ExportFileAsync(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ExportFileAsync(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Export a glossary
@@ -266,7 +266,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ExportFileWithHttpInfoAsync(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ExportFileWithHttpInfoAsync(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// get glossary info
         /// </summary>
@@ -783,7 +783,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void ExportFile(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0)
+        public void ExportFile(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0)
         {
             ExportFileWithHttpInfo(id, fields, format, langs);
         }
@@ -798,7 +798,7 @@ namespace Com.Gridly.Api
         /// <param name="langs"> (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Com.Gridly.Client.ApiResponse<Object> ExportFileWithHttpInfo(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0)
+        public Com.Gridly.Client.ApiResponse<Object> ExportFileWithHttpInfo(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0)
         {
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();
 
@@ -869,7 +869,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ExportFileAsync(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ExportFileAsync(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             await ExportFileWithHttpInfoAsync(id, fields, format, langs, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -885,7 +885,7 @@ namespace Com.Gridly.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> ExportFileWithHttpInfoAsync(long id, List<string> fields = default(List<string>), ExportFormat1? format = default(ExportFormat1?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Com.Gridly.Client.ApiResponse<Object>> ExportFileWithHttpInfoAsync(long id, List<string> fields = default(List<string>), GlossaryExportFormat? format = default(GlossaryExportFormat?), List<string> langs = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Com.Gridly.Client.RequestOptions localVarRequestOptions = new Com.Gridly.Client.RequestOptions();

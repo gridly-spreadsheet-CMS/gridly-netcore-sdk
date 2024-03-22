@@ -39,7 +39,7 @@ namespace Com.Gridly.Model
         /// <param name="description">description.</param>
         /// <param name="langs">langs.</param>
         /// <param name="projects">projects.</param>
-        public UpdateGlossary(string name = default(string), string description = default(string), List<string> langs = default(List<string>), List<Project> projects = default(List<Project>))
+        public UpdateGlossary(string name = default(string), string description = default(string), List<string> langs = default(List<string>), List<GlossaryProject> projects = default(List<GlossaryProject>))
         {
             this.Name = name;
             this.Description = description;
@@ -69,7 +69,7 @@ namespace Com.Gridly.Model
         /// Gets or Sets Projects
         /// </summary>
         [DataMember(Name = "projects", EmitDefaultValue = true)]
-        public List<Project> Projects { get; set; }
+        public List<GlossaryProject> Projects { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

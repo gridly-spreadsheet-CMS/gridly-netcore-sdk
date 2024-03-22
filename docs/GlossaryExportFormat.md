@@ -1,4 +1,4 @@
-# Com.Gridly.Model.ExportFormat1
+# Com.Gridly.Model.GlossaryExportFormat
 
 ## Properties
 
