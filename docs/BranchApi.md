@@ -598,7 +598,7 @@ catch (ApiException e)
 
 <a name="merge"></a>
 # **Merge**
-> Task Merge (string branchId, string destinationBranchId, List<string> mergeRecordOptions = null)
+> Task Merge (string branchId, string destinationBranchId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -628,12 +628,13 @@ namespace Example
             var apiInstance = new BranchApi(config);
             var branchId = "branchId_example";  // string | branchId
             var destinationBranchId = "destinationBranchId_example";  // string | destinationBranchId
+            var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                Task result = apiInstance.Merge(branchId, destinationBranchId, mergeRecordOptions);
+                Task result = apiInstance.Merge(branchId, destinationBranchId, mergeBranchRequest, mergeRecordOptions);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -654,7 +655,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // merge
-    ApiResponse<Task> response = apiInstance.MergeWithHttpInfo(branchId, destinationBranchId, mergeRecordOptions);
+    ApiResponse<Task> response = apiInstance.MergeWithHttpInfo(branchId, destinationBranchId, mergeBranchRequest, mergeRecordOptions);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -673,6 +674,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **branchId** | **string** | branchId |  |
 | **destinationBranchId** | **string** | destinationBranchId |  |
+| **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md) |  |  |
 | **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
@@ -685,7 +687,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

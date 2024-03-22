@@ -618,7 +618,7 @@ catch (ApiException e)
 
 <a name="merge"></a>
 # **Merge**
-> Task Merge (string destinationViewId, string viewId, List<string> mergeRecordOptions = null)
+> Task Merge (string destinationViewId, string viewId, MergeBranchRequest mergeBranchRequest, List<string> mergeRecordOptions = null)
 
 merge
 
@@ -648,12 +648,13 @@ namespace Example
             var apiInstance = new ViewApi(config);
             var destinationViewId = "destinationViewId_example";  // string | destinationViewId
             var viewId = "viewId_example";  // string | viewId
+            var mergeBranchRequest = new MergeBranchRequest(); // MergeBranchRequest | 
             var mergeRecordOptions = new List<string>(); // List<string> | mergeRecordOptions (optional) 
 
             try
             {
                 // merge
-                Task result = apiInstance.Merge(destinationViewId, viewId, mergeRecordOptions);
+                Task result = apiInstance.Merge(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -674,7 +675,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // merge
-    ApiResponse<Task> response = apiInstance.MergeWithHttpInfo(destinationViewId, viewId, mergeRecordOptions);
+    ApiResponse<Task> response = apiInstance.MergeWithHttpInfo(destinationViewId, viewId, mergeBranchRequest, mergeRecordOptions);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -693,6 +694,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **destinationViewId** | **string** | destinationViewId |  |
 | **viewId** | **string** | viewId |  |
+| **mergeBranchRequest** | [**MergeBranchRequest**](MergeBranchRequest.md) |  |  |
 | **mergeRecordOptions** | [**List&lt;string&gt;**](string.md) | mergeRecordOptions | [optional]  |
 
 ### Return type
@@ -705,7 +707,7 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

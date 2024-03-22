@@ -315,7 +315,7 @@ catch (ApiException e)
 
 <a name="fetchhistories"></a>
 # **FetchHistories**
-> List&lt;RecordHistory&gt; FetchHistories (string viewId, string recordId, string page = null)
+> List&lt;RecordHistory&gt; FetchHistories (string viewId, string recordId, FetchRecordHistoryRequest fetchRequest)
 
 fetchHistories
 
@@ -345,12 +345,12 @@ namespace Example
             var apiInstance = new RecordApi(config);
             var viewId = "viewId_example";  // string | viewId
             var recordId = "recordId_example";  // string | recordId
-            var page = "\"{}\"";  // string | page (optional)  (default to "{}")
+            var fetchRequest = new FetchRecordHistoryRequest(); // FetchRecordHistoryRequest | fetchRequest
 
             try
             {
                 // fetchHistories
-                List<RecordHistory> result = apiInstance.FetchHistories(viewId, recordId, page);
+                List<RecordHistory> result = apiInstance.FetchHistories(viewId, recordId, fetchRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -371,7 +371,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // fetchHistories
-    ApiResponse<List<RecordHistory>> response = apiInstance.FetchHistoriesWithHttpInfo(viewId, recordId, page);
+    ApiResponse<List<RecordHistory>> response = apiInstance.FetchHistoriesWithHttpInfo(viewId, recordId, fetchRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -390,7 +390,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **viewId** | **string** | viewId |  |
 | **recordId** | **string** | recordId |  |
-| **page** | **string** | page | [optional] [default to &quot;{}&quot;] |
+| **fetchRequest** | [**FetchRecordHistoryRequest**](FetchRecordHistoryRequest.md) | fetchRequest |  |
 
 ### Return type
 

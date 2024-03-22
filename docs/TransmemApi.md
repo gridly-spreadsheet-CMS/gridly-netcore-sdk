@@ -582,7 +582,7 @@ catch (ApiException e)
 
 <a name="importtmx"></a>
 # **ImportTmx**
-> void ImportTmx (string tmId, System.IO.Stream file)
+> void ImportTmx (string tmId, Object file)
 
 Import a translation memory from tmx file
 
@@ -609,7 +609,7 @@ namespace Example
 
             var apiInstance = new TransmemApi(config);
             var tmId = "tmId_example";  // string | 
-            var file = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream | 
+            var file = new Object(); // Object | 
 
             try
             {
@@ -649,7 +649,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **tmId** | **string** |  |  |
-| **file** | **System.IO.Stream****System.IO.Stream** |  |  |
+| **file** | [**Object**](Object.md) |  |  |
 
 ### Return type
 
