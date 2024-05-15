@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MergeRecordOptions** | **List&lt;string&gt;** |  | [optional] 
+**MergeRecordOptions** | **List&lt;MergeBranchRequest.MergeRecordOptionsEnum&gt;** |  | [optional] 
 **MergeRecordConflicts** | [**List&lt;MergeRecordConflict&gt;**](MergeRecordConflict.md) |  | [optional] 
 **UseLastMergeResolve** | **bool** |  | [optional] 
 **Query** | [**List&lt;FilterField&gt;**](FilterField.md) |  | [optional] 
