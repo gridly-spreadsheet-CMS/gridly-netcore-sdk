@@ -4,7 +4,7 @@ name: Gridly NetCore SDK
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     tags: 
       - '*'
 jobs:
